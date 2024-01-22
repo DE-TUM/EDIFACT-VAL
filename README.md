@@ -4,19 +4,21 @@ EDIFACT-VAL is an automatic tool to validate the content of EDIFACT messages usi
 
 ## Overview 
 
-The EIDFACT-VAL tool contains the following steps: 
+The EIDFACT-VAL tool contains the following programs: 
 
 1: Pre-Processing:
-  - [Python Programm](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/EDIFACT_Val_Defintions.py) for extension of the XML files 
+  - Python Programm for extension of the XML files
 
 2: RDF Graph Creation for Invoices: 
-  - [YARRRML Mapping](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/general.yarrrml) 
-  - [RML Mapping](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/general.rml.ttl) 
+  - YARRRML Mapping 
+  - RML Mapping
 
 3: RDF Validation:  
-  - [SHACL constraints](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/ProcessExample.ttl) for exemplary business processes 
+  - SHACL constraints for exemplary business processes 
 
-All these steps are combined into one Python program called [EDIFACT-Val](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/EDIFACT-Val.py)
+All these steps are combined into one Python program called EDIFACT-Val.
+
+The repository contains a version for [macOS](https://github.com/johannesmaekelburg/EDIFACT-VAL/tree/3b0a8c3a2bdfd063d890a581d9456b5a61649a61/macOS) and a version for [Windows](https://github.com/johannesmaekelburg/EDIFACT-VAL/tree/3b0a8c3a2bdfd063d890a581d9456b5a61649a61/Windows). 
 
 An overview of the EDIFACT Val tool can be seen here: 
 ![alt text](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/EDIFACT-VAL%20Overview%20.png)
