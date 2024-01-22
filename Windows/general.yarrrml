@@ -1,0 +1,2919 @@
+prefixes:
+ dc: http://purl.org/dc/elements/1.1# 
+ edifact-o: https://purl.org/edifact/ontology#
+ frapo: http://purl.org/cerif/frapo/
+ org: http://www.w3.org/ns/org# 
+ p2p-o: https://purl.org/p2p-o#
+ p2p-o-doc: https://purl.org/p2p-o/document#
+ p2p-o-doc-line: https://purl.org/p2p-o/documentline#
+ p2p-o-inv: https://purl.org/p2p-o/invoice#
+ p2p-o-item: https://purl.org/p2p-o/item#
+ p2p-o-org: https://purl.org/p2p-o/organization#
+ schema: http://schema.org/ 
+ vcard: http://www.w3.org/2006/vcard/ns# 
+ agentRole: https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole# 
+
+
+
+sources:
+    test-source0:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNB"
+    test-source120:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNB/C_S001"
+    test-source121:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNB/C_S002"
+    test-source122:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNB/C_S003"
+    test-source123:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNB/C_S004"
+    test-source124:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNB/C_S005"
+    test-source1:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message"
+    test-source2:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNH"
+    test-source125:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNH/C_S009"
+    test-source126:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNH/C_S010"
+    test-source3:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_BGM"
+    test-source127:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_BGM/C_C002"
+    test-source4:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_DTM"
+    test-source128:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_DTM/C_C507"
+    test-source5:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_PAI"
+    test-source129:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_PAI/C_C534"
+    test-source6:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_ALI"
+    test-source7:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_FTX"
+    test-source130:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_FTX/C_C107"
+    test-source131:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_FTX/C_C108"
+    test-source8:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_1"
+    test-source9:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_1/S_RFF"
+    test-source132:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_1/S_RFF/C_C506"
+    test-source10:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_1/S_DTM"
+    test-source133:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_1/S_DTM/C_C507"
+    test-source11:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2"
+    test-source12:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_NAD"
+    test-source134:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_NAD/C_C082"
+    test-source135:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_NAD/C_C058"
+    test-source136:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_NAD/C_C080"
+    test-source137:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_NAD/C_C059"
+    test-source13:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_FII"
+    test-source138:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_FII/C_C078"
+    test-source139:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/S_FII/C_C088"
+    test-source14:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_3"
+    test-source15:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_3/S_RFF"
+    test-source140:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_3/S_RFF/C_C506"
+    test-source16:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_5/S_CTA"
+    test-source141:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_5/S_CTA/C_C056"
+    test-source17:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_5/S_COM"
+    test-source142:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_2/G_Group_5/S_COM/C_C076"
+    test-source18:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6"
+    test-source19:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6/S_TAX"
+    test-source143:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6/S_TAX/C_C241"
+    test-source144:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6/S_TAX/C_C533"
+    test-source145:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6/S_TAX/C_C243"
+    test-source20:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6/S_MOA"
+    test-source146:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_6/S_MOA/C_C516"
+    test-source21:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_7"      
+    test-source22:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_7/S_CUX"
+    test-source147:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_7/S_CUX/C_C504"
+    test-source23:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_7/S_DTM"
+    test-source148:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_7/S_DTM/C_C507"
+    test-source24:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8"
+    test-source25:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_PAT"
+    test-source149:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_PAT/C_C110"
+    test-source150:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_PAT/C_C112"
+    test-source26:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_DTM"
+    test-source151:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_DTM/C_C507"
+    test-source27:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_PCD"
+    test-source152:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_PCD/C_C501"
+    test-source28:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_MOA"
+    test-source153:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_8/S_MOA/C516"
+    test-source29:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9"
+    test-source30:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9/S_TDT"
+    test-source154:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9/S_TDT/C_C220"
+    test-source155:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9/S_TDT/C_C228"
+    test-source156:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9/S_TDT/C_C040"
+    test-source157:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9/S_TDT/C_C401"
+    test-source158:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_9/S_TDT/C_C222"
+    test-source31:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12"
+    test-source32:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_TOD"
+    test-source159:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_TOD/C_C100"
+    test-source33:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_LOC"
+    test-source160:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_LOC/C_C517"
+    test-source161:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_LOC/C_C519"
+    test-source162:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_LOC/C_C553"
+    test-source34:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_13"
+    test-source35:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_PAC"
+    test-source163:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_PAC/C_C531"
+    test-source164:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_PAC/C_C202"
+    test-source165:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_PAC/C_C402"
+    test-source166:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_12/S_PAC/C_C532"
+    test-source36:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15"
+    test-source167:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/S_ALC/C_C552"
+    test-source168:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/S_ALC/C_C214"
+    test-source37:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/S_ALC"
+    test-source38:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_17"
+    test-source39:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_17/S_QTY"
+    test-source169:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_17/S_QTY/C_C168"
+    test-source40:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_18"
+    test-source41:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_18/S_PCD"
+    test-source170:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_18/S_PCD/C_C501"
+    test-source42:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_19"
+    test-source43:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_19/S_MOA"
+    test-source171:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_19/S_MOA/C_C516"
+    test-source44:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_20"
+    test-source45:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_20/S_RTE"
+    test-source172:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_20/S_RTE/C_C128"
+    test-source46:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21"
+    test-source47:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21/S_TAX"
+    test-source173:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21/S_TAX/C_C241"
+    test-source174:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21/S_TAX/C_C533"
+    test-source175:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21/S_TAX/C_C243"
+    test-source48:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21/S_MOA"
+    test-source176:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_15/G_Group_21/S_MOA/C_C516"
+    test-source49:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25"
+    test-source50:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_LIN"
+    test-source177:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_LIN/C_C212"
+    test-source178:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_LIN/C_C829"
+    test-source51:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_PIA"
+    test-source179:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_PIA/C_C212"
+    test-source52:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_IMD"
+    test-source180:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_IMD/C_C273"
+    test-source53:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_MEA"
+    test-source181:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_MEA/C_C502"
+    test-source182:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_MEA/C_C174"
+    test-source54:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_QTY"
+    test-source183:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_QTY/C_C186"
+    test-source55:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_ALI"
+    test-source56:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_DTM"
+    test-source184:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_DTM/C_C507"
+    test-source57:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_QVR"
+    test-source185:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_QVR/C_C186"
+    test-source58:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_FTX" 
+    test-source186:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_FTX/C_C107"
+    test-source187:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/S_FTX/C_C108" 
+    test-source59:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_26"
+    test-source60:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_26/S_MOA"
+    test-source188:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_26/S_MOA/C_C516"
+    test-source61:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_26/S_CUX"
+    test-source189:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_26/S_CUX/C_C504"
+    test-source62:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27"
+    test-source63:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_PAT"
+    test-source190:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_PAT/C_C110"
+    test-source191:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_PAT/C_C112"
+    test-source64:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_DTM"
+    test-source192:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_DTM/C_C507"
+    test-source65:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_PCD"
+    test-source193:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_PCD/C_C501"
+    test-source66:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_MOA"
+    test-source194:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_27/S_MOA/C_C516"
+    test-source67:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_28"
+    test-source68:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_28/S_PRI"
+    test-source195:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_28/S_PRI/C_C509"
+    test-source69:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_29"
+    test-source70:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_29/S_RFF"
+    test-source196:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_29/S_RFF/C_C506"
+    test-source71:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_29/S_DTM" 
+    test-source197:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_29/S_DTM/C_C507" 
+    test-source72:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30"
+    test-source73:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_PAC"
+    test-source198:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_PAC/C_C531"
+    test-source199:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_PAC/C_C202"
+    test-source200:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_PAC/C_C402"
+    test-source201:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_PAC/C_C532"
+    test-source74:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_MEA" 
+    test-source202:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_MEA/C_C502"
+    test-source203:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/S_MEA/C_C174" 
+    test-source75:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_31" 
+    test-source76:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/G_Group_31/S_PCI" 
+    test-source204:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/G_Group_31/S_PCI/C_C210"
+    test-source205:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/G_Group_31/S_PCI/C_C827" 
+    test-source77:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/G_Group_31/S_GIN"
+    test-source206:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_30/G_Group_31/S_GIN/C_C208"  
+    test-source78:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32" 
+    test-source79:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_LOC"
+    test-source207:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_LOC/C_C517"
+    test-source208:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_LOC/C_C519"
+    test-source209:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_LOC/C_C553"
+    test-source80:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_QTY"
+    test-source210:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_QTY/C_C186" 
+    test-source81:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_DTM"
+    test-source211:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_32/S_DTM/C_C507"  
+    test-source82:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33" 
+    test-source83:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33/S_TAX"
+    test-source212:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33/S_TAX/C_C241"
+    test-source213:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33/S_TAX/C_C533"
+    test-source214:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33/S_TAX/C_C243"
+    test-source84:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33/S_MOA" 
+    test-source215:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_33/S_MOA/C_C516" 
+    test-source85:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34"
+    test-source86:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/S_NAD" 
+    test-source216:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/S_NAD/C_C082"
+    test-source217:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/S_NAD/C_C058"
+    test-source218:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/S_NAD/C_C080"
+    test-source219:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/S_NAD/C_C059" 
+    test-source87:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/G_Group_35" 
+    test-source88:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/G_Group_35/S_RFF" 
+    test-source220:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_34/G_Group_35/S_RFF/C_C506"  
+    test-source89:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38"
+    test-source90:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/S_ALC"
+    test-source221:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/S_ALC/C_C552"
+    test-source222:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/S_ALC/C_C214"
+    test-source91:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/S_ALI"  
+    test-source92:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_39" 
+    test-source93:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_39/S_QTY"
+    test-source223:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_39/S_QTY/C_C186"  
+    test-source94:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_40" 
+    test-source95:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_40/S_PCD" 
+    test-source224:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_40/S_PCD/C_C501"  
+    test-source96:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_41" 
+    test-source97:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_41/S_MOA"
+    test-source225:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_41/S_MOA/C_C516"  
+    test-source98:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_42"
+    test-source99:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_42/S_RTE" 
+    test-source226:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_42/S_RTE/C_C128"  
+    test-source100:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43"
+    test-source101:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43/S_TAX" 
+    test-source227:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43/S_TAX/C_C241"
+    test-source228:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43/S_TAX/C_C553"
+    test-source229:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43/S_TAX/C_C243" 
+    test-source102:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43/S_MOA"  
+    test-source230:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_43/S_MOA/C_C516"  
+    test-source103:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_44" 
+    test-source104:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_44/S_TDT"
+    test-source231:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_44/S_TDT/C_C220"
+    test-source232:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_44/S_TDT/C_C228" 
+    test-source233:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_44/S_TDT/C_C040"
+    test-source234:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_25/G_Group_38/G_Group_44/S_TDT/C_C222"
+    test-source105:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNS"   
+    test-source106:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNS/S_CNT" 
+    test-source235:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNS/S_CNT/C_C270" 
+    test-source107:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48"  
+    test-source108:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/S_MOA"
+    test-source236:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/S_MOA/C_C516"
+    test-source109:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/G_Group_49" 
+    test-source110:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/G_Group_49/S_RFF"
+    test-source237:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/G_Group_49/S_RFF/C_C506" 
+    test-source111:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/G_Group_49/S_DTM" 
+    test-source238:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_48/G_Group_49/S_DTM/C_C507"  
+    test-source112:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50"  
+    test-source113:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50/S_TAX"
+    test-source239:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50/S_TAX/C_C241"
+    test-source240:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50/S_TAX/C_C533"
+    test-source241:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50/S_TAX/C_C243"
+    test-source114:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50/S_MOA"
+    test-source242:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_50/S_MOA/C_C516"  
+    test-source115:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51"  
+    test-source116:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51/S_ALC"
+    test-source243:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51/S_ALC/C552"
+    test-source244:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51/S_ALC/C214"
+    test-source117:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51/S_ALI"
+    test-source118:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51/S_MOA"
+    test-source245:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/G_Group_51/S_MOA/C_C516"
+    test-source119:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/S_UNT"
+    test-source246:
+      access: "INVOIC2.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/S_UNZ" 
+mappings:
+    eancomStructure:
+      sources: 
+          - test-source0
+          - test-source2
+          - test-source105
+          - test-source106
+          - test-source119
+          - test-source120
+          - test-source121
+          - test-source122
+          - test-source123
+          - test-source124
+          - test-source125
+          - test-source126
+          - test-source235
+          - test-source246
+      subjects:
+        - value: http://example.com/$(./@eancomstructure)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: edifact-o:EANCOM-Structure
+              type: iri
+        - predicates: edifact-o:synatxIdentifier
+          objects: 
+              value: "$(./D_0001)"
+        - predicates: edifact-o:synatxVersion
+          objects: 
+              value: "$(./D_0002)"
+              datatype: xsd:integer
+        - predicates: edifact-o:senderIndicator
+          objects: 
+              value: "$(./D_0004)"
+        - predicates: edifact-o:recipientIndicator 
+          objects: 
+              value: "$(./D_0010)"
+        - predicates: edifact-o:creationDate
+          objects: 
+              value: "$(./D_0017)"
+              datatype: xsd:integer
+        - predicates: edifact-o:creationTime
+          objects: 
+              value: "$(./D_0019)"
+              datatype: xsd:integer
+        - predicates: edifact-o:dataExchangeReference
+          objects: 
+              value: "$(./D_0020)"
+              datatype: xsd:string
+        - predicates: edifact-o:totalNumberOfSegments
+          objects: 
+              value: "$(./D_0074)"
+              datatype: xsd:string
+        - predicates: edifact-o:controlSegmentBetweenItemAndTotalPart
+          objects: 
+              value: "$(./D_0081)"
+              datatype: xsd:string
+        - predicates: edifact-o:messageReferenceNumber
+          objects: 
+              value: "$(./D_0062)"
+              datatype: xsd:string
+        - predicates: edifact-o:messageTypeIdentifier
+          objects: 
+              value: "$(./D_0065)"
+              datatype: xsd:string
+        - predicates: edifact-o:versionNumberMessageType
+          objects: 
+              value: "$(./D_0052)"
+              datatype: xsd:string
+        - predicates: edifact-o:releaseNumberMessageType
+          objects: 
+              value: "$(./D_0054)"
+              datatype: xsd:string
+        - predicates: edifact-o:managingOrganisations
+          objects: 
+              value: "$(./D_0051)"
+              datatype: xsd:string
+        - predicates: edifact-o:dataExchangeCounter
+          objects: 
+              value: "$(./D_0036)"
+              datatype: xsd:integer
+    mainInvoice:
+      sources: 
+        - test-source1
+        - test-source2
+        - test-source50
+      subjects:
+        - value: http://example.com/$(./@details)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: p2p-o-doc:E-Invoice
+              type: iri
+        - predicates: edifact-o:followsStandard
+          objects: 
+            value: http://example.com/$(./@eancomstructure)
+            type: iri
+        - predicates: edifact-o:belongsToProcess
+          objects: 
+              - value: "$(./ProcessIdentification)"
+        - predicates: edifact-o:hasItem
+          objects: 
+            value: http://example.com/$(./@nid)
+            type: iri
+        - predicates: edifact-o:hasInvoiceDetails
+          objects: 
+            value: http://example.com/$(./@mid)
+            type: iri
+        - predicates: edifact-o:hasBuyerAgent
+          objects: 
+              value: http://example.com/$(./@Verkaufs_Agent)
+              type: iri
+        - predicates: edifact-o:hasBrokerOrSalesOffice
+          objects: 
+              value: http://example.com/$(./@Broker_oder_Verkaufsbuero)
+              type: iri
+        - predicates: edifact-o:calculateAndDeliverTo
+          objects: 
+              value: http://example.com/$(./@Berechnen_und_liefern_an)
+              type: iri
+        - predicates: p2p-o-inv:hasBuyer
+          objects: 
+              value: http://example.com/$(./@Kaeufer)
+              type: iri
+        - predicates: edifact-o:hasRecipient
+          objects: 
+              value: http://example.com/$(./@Empfaenger)
+              type: iri
+        - predicates: edifact-o:hasCentralRegulator
+          objects: 
+              value: http://example.com/$(./@Zentralregulierer_EAN_Code)
+              type: iri
+        - predicates: edifact-o:hasDeliveryParty
+          objects: 
+              value: http://example.com/$(./@Lieferanschrift)
+              type: iri
+        - predicates: edifact-o:hasInvoicingParty
+          objects: 
+              value: http://example.com/$(./@Rechnungssteller)
+              type: iri
+        - predicates: edifact-o:hasInvoicee
+          objects: 
+              value: http://example.com/$(./@Rechnungsempfaenger)
+              type: iri
+        - predicates: p2p-o-inv:hasPayee
+          objects: 
+              value: http://example.com/$(./@Bezahler)
+              type: iri
+        - predicates: edifact-o:hasDespatchParty
+          objects: 
+              value: http://example.com/$(./@Auslieferungspartei)
+              type: iri
+        - predicates: edifact-o:hasRecipientOfInvoiceRegulation
+          objects: 
+              value: http://example.com/$(./@Empfaenger_der_Rechnungsregulierung)
+              type: iri
+        - predicates: edifact-o:hasRegulator
+          objects: 
+              value: http://example.com/$(./@Rechnungsregulier)
+              type: iri
+        - predicates: edifact-o:hasSuppliersCompanyHeadquarter
+          objects: 
+              value: http://example.com/$(./@Unternehmenszentrale_des_Lieferanten)
+              type: iri
+        - predicates: p2p-o-inv:hasSeller
+          objects: 
+              value: http://example.com/$(./@Verkaeufer)
+              type: iri
+        - predicates: edifact-o:hasWarehouseNumber
+          objects: 
+              value: http://example.com/$(./@Lagernummer)
+              type: iri
+        - predicates: edifact-o:hasRepresentativeOrAgentOfSupplier
+          objects: 
+              value: http://example.com/$(./@Beauftrageter_oder_Agent_des_Lieferanten)
+              type: iri
+        - predicates: edifact-o:isSendTo
+          objects: 
+              value: http://example.com/$(./@Versenden_an)
+              type: iri
+        - predicates: p2p-o-inv:hasSupplier
+          objects: 
+              value: http://example.com/$(./@Lieferant)
+              type: iri
+        - predicates: edifact-o:hasWholesaler
+          objects: 
+              value: http://example.com/$(./@Grosshaendler)
+              type: iri
+        - predicates: edifact-o:hasFinalConsignee
+          objects: 
+              value: http://example.com/$(./@Endempfaenger)
+              type: iri
+        - predicates: edifact-o:hasReceivingCreditInstitution
+          objects: 
+              value: http://example.com/$(./@Empfangendes_Kreditinstitut)
+              type: iri
+        - predicates: edifact-o:hasPayingCreditInsitute
+          objects: 
+              value: http://example.com/$(./@Zahlendes_Kreditinstitut)
+              type: iri
+    InvoiceDetails:
+      sources: 
+          - test-source1
+          - test-source3
+          - test-source4
+          - test-source5
+          - test-source6
+          - test-source7
+          - test-source8
+          - test-source9
+          - test-source10
+          - test-source18
+          - test-source19
+          - test-source20
+          - test-source21
+          - test-source22
+          - test-source23
+          - test-source24
+          - test-source25
+          - test-source26
+          - test-source27
+          - test-source28
+          - test-source29
+          - test-source30
+          - test-source31
+          - test-source32
+          - test-source33
+          - test-source34
+          - test-source35
+          - test-source36
+          - test-source37
+          - test-source38
+          - test-source39
+          - test-source40
+          - test-source41
+          - test-source42
+          - test-source43
+          - test-source44
+          - test-source45
+          - test-source46
+          - test-source47
+          - test-source48
+          - test-source107
+          - test-source108
+          - test-source109
+          - test-source110
+          - test-source111
+          - test-source112
+          - test-source113
+          - test-source114
+          - test-source115
+          - test-source116
+          - test-source117
+          - test-source118
+          - test-source127
+          - test-source128
+          - test-source129
+          - test-source130
+          - test-source131
+          - test-source143
+          - test-source144
+          - test-source145
+          - test-source146
+          - test-source147
+          - test-source148
+          - test-source149
+          - test-source150
+          - test-source151
+          - test-source152
+          - test-source153
+          - test-source154
+          - test-source155
+          - test-source156
+          - test-source157
+          - test-source158
+          - test-source159
+          - test-source160
+          - test-source161
+          - test-source162
+          - test-source163
+          - test-source164
+          - test-source165
+          - test-source166
+          - test-source167
+          - test-source168
+          - test-source169
+          - test-source170
+          - test-source171
+          - test-source172
+          - test-source173
+          - test-source174
+          - test-source175
+          - test-source176
+          - test-source236
+          - test-source237
+          - test-source238
+          - test-source239
+          - test-source240
+          - test-source241
+          - test-source242
+          - test-source243
+          - test-source244
+          - test-source245
+      subjects:
+        - value: http://example.com/$(./@mid)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: edifact-o:InvoiceDetails
+              type: iri 
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+            value: "$(./D_3039)"
+            datatype: xsd:integer
+        - predicates: schema:currency
+          objects: 
+              - value: "$(./Waehrung)"
+        - predicates: edifact-o:invoiceCurrency
+          objects: 
+              - value: "$(./WaehrungRechnung)"
+        - predicates: edifact-o:orderCurrency
+          objects: 
+              - value: "$(./WaehrungBestellung)"
+        - predicates: edifact-o:priceCurrency
+          objects: 
+              - value: "$(./WaehrungPreisangabe)"
+        - predicates: edifact-o:paymentCurrency
+          objects: 
+              - value: "$(./WaehrungZahlung)"
+        - predicates: edifact-o:hasRequiredDeliveryDate
+          objects: 
+              - value: "$(./geforderter_Liefertermin)"
+        - predicates: frapo:hasInvoiceDate
+          objects: 
+              - value: "$(./Rechnungsdatum)"
+        - predicates: frapo:PurchaseDate
+          objects: 
+              - value: "$(./Bestelldatum)"
+        - predicates: edifact-o:effectiveDate
+          objects: 
+              - value: "$(./Gueltigkeitsdatum)"
+        - predicates: frapo:hasDispatchDate
+          objects: 
+              - value: "$(./Versanddatum)"
+        - predicates: edifact-o:hasTermsDiscountDueDate
+          objects: 
+              - value: "$(./Faelligkeitsdatum_bei_Skontoabzug)"
+        - predicates: edifact-o:hasTermsNetDueDate
+          objects: 
+              - value: "$(./Faelligkeitsdatum_bei_Zahlung_ohne_Abzug)"
+        - predicates: p2p-o-inv:actualDeliveryDate
+          objects: 
+              - value: "$(./tatsaechliches_Lieferdatum)"
+        - predicates: edifact-o:receiptGoodsDate
+          objects: 
+              - value: "$(./Wareneingangsdatum)"
+        - predicates: edifact-o:exhangeRateDate
+          objects: 
+              - value: "$(./Wechselkursdatum)"
+        - predicates: edifact-o:documentDate
+          objects: 
+              - value: "$(./Dokumenten_oder_Nachrichten_Datum)"
+        - predicates: edifact-o:referenceDate
+          objects: 
+              - value: "$(./Referenzdatum)"
+        - predicates: edifact-o:valutaDate 
+          objects: 
+              - value: "$(./Valutadatum)"
+        - predicates: edifact-o:calculationPeriod
+          objects: 
+              - value: "$(./Abechnungszeitraum)"
+        - predicates: edifact-o:taxPeriod
+          objects: 
+              - value: "$(./Steuerperiode)"
+        - predicates: edifact-o:loadPeriod
+          objects: 
+              - value: "$(./Belastungsperiode)"
+        - predicates: edifact-o:discountTerminationDate
+          objects: 
+              - value: "$(./Datum_Rabattbeendigung)"
+        - predicates: edifact-o:hasDocumentNumber
+          objects: 
+              - value: "$(./Dokumentennummer)"
+        - predicates: edifact-o:hasDocumentType
+          objects: 
+              - value: "$(./Dokumentenname)"
+        - predicates: edifact-o:hasDocumentFunction
+          objects: 
+              - value: "$(./Dokumentenfunktion)"
+        - predicates: edifact-o:hasInvoiceAmount
+          objects: 
+              value: "$(./Rechnungsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalLineItemAmount
+          objects: 
+              value: "$(./Gesamtpositionsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxableAmount
+          objects: 
+              value: "$(./Steuerpflichtiger_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalDutyTaxFeeAmount
+          objects: 
+              value: "$(./Gesamter_Zoll_Steuer_Gebuehrenbetrag_der_Nachricht)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmount
+          objects: 
+              value: "$(./Gesamtbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasUnitPrice
+          objects: 
+              value: "$(./Preis_pro_Einheit)"
+              datatype: xsd:float 
+        - predicates: edifact-o:hasVATamount
+          objects: 
+              value: "$(./Mehrwertsteuer_Betrag)"
+              datatype: xsd:float 
+        - predicates: edifact-o:hasVATfirstValue
+          objects: 
+              value: "$(./Umsatzsteuer_erster_Wert)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxAmount
+          objects: 
+              value: "$(./Steuerbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAmount
+          objects: 
+              value: "$(./Zuschlagsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowanceAmount
+          objects: 
+              value: "$(./Abschlagsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountDueOrPayable
+          objects: 
+              value: "$(./Faelliger_Betrag_oder_zahlbarerBetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasRemittedtAmount
+          objects: 
+              value: "$(./Uebermittelter_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasCashDiscount
+          objects: 
+              value: "$(./Barzahlungsrabatt)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAllowanceBasis
+          objects: 
+              value: "$(./Zu_Abschlagsbasis)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountAmount
+          objects: 
+              value: "$(./Abzug_Rabatt)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDueDeductionAmount
+          objects: 
+              value: "$(./Faelliger_Abzugsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasBasicTaxAmount
+          objects: 
+              value: "$(./Steuergrundbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasFreightCharge
+          objects: 
+              value: "$(./Frachtgebuehr)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalGoodsPosition
+          objects: 
+              value: "$(./WarenpositionInsgesamt)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasOriginalAmount
+          objects: 
+              value: "$(./Originalbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPaymentDiscountAmount
+          objects: 
+              value: "$(./Zahlungskuerzung)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountMessage
+          objects: 
+              value: "$(./Gesamtbetrag_Nachricht)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountUnderPaymentReduction
+          objects: 
+              value: "$(./Gesamtbetrag_unterliegt_Zahlungskuerzung)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPrepaidAmount
+          objects: 
+              value: "$(./Vorausbezahlter_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAdditionsAndDeductions
+          objects: 
+              value: "$(./GesamtZu_Abschlaege)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyAmount
+          objects: 
+              value: "$(./Strafbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountUnderPriceAdjustment
+          objects: 
+              value: "$(./Betrag_unterliegt_einer_Preisberichtigung)"
+              datatype: xsd:float
+        - predicates: edifact-o:proformaInvoiceNumber
+          objects: 
+              - value: "$(./Proforma_Rechnungsnummer)"
+        - predicates: edifact-o:dateProformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Proforma_Rechnungsnummer)"
+        - predicates: edifact-o:orderNumberDelivery
+          objects: 
+              - value: "$(./Nummer_Lieferauftrag)"
+        - predicates: edifact-o:dateOrderNumberDelivery
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_Lieferauftrag)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./Nummer_Lieferschein)"
+        - predicates: edifact-o:dateDespatchAdviceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_Lieferschein)"
+        - predicates: edifact-o:offerNumber
+          objects: 
+              - value: "$(./Angebotsnummer)"
+        - predicates: edifact-o:dateOfferNumber
+          objects: 
+              - value: "$(./Referenzdatum_Angebotsnummer)"
+        - predicates: edifact-o:customsTariffNumber
+          objects: 
+              - value: "$(./Zolltarifnummer)"
+        - predicates: edifact-o:dateCustomsTariffNumber
+          objects: 
+              - value: "$(./Referenzdatum_Zolltarifnummer)"
+        - predicates: edifact-o:originatorReference
+          objects: 
+              - value: "$(./Referenz_des_Absenders)"
+        - predicates: edifact-o:dateOriginatorReference
+          objects: 
+              - value: "$(./Referenzdatum_Referenz_des_Absenders)"
+        - predicates: edifact-o:relatedDocumentNumber
+          objects: 
+              - value: "$(./zugehoerige_Dokumentennummer)"
+        - predicates: edifact-o:dateRelatedDocumentNumber
+          objects: 
+              - value: "$(./Referenzdatum_zugehoerige_Dokumentennummer)"
+        - predicates: edifact-o:relatedDocumentNumber
+          objects: 
+              - value: "$(./zugehoerige_Dokumentennummer)"
+        - predicates: edifact-o:dateRelatedDocumentNumber
+          objects: 
+              - value: "$(./Referenzdatum_zugehoerige_Dokumentennummer)"
+        - predicates: edifact-o:accountsReceivableNumber
+          objects: 
+              - value: "$(./Nummer_des_Forderungskontos)"
+        - predicates: edifact-o:dateAccountsReceivableNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_des_Forderungskontos)"
+        - predicates: edifact-o:beneficiaryReference
+          objects: 
+              - value: "$(./Referenz_des_Beguenstigten)"
+        - predicates: edifact-o:dateBeneficiaryReference
+          objects: 
+              - value: "$(./Referenzdatum_Referenz_des_Beguenstigten)"
+        - predicates: edifact-o:numberOfBundleMessages
+          objects: 
+              - value: "$(./Nummer_eines_Buendels_von_Nachrichten)"
+        - predicates: edifact-o:dateNumberOfBundleMessages
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_eines_Buendels_von_Nachrichten)"
+        - predicates: edifact-o:receivingAdviceNumber
+          objects: 
+              - value: "$(./Wareneingangsmeldung_Nummer)"
+        - predicates: edifact-o:dateReceivingAdviceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Wareneingangsmeldung_Nummer)"
+        - predicates: edifact-o:additionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Zusaetzliche_Partneridentifikation_EAN_Code)"
+        - predicates: edifact-o:dateAdditionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenzdatum_Zusaetzliche_Partneridentifikation_EAN_Code)"
+        - predicates: edifact-o:contractNumberBuyer
+          objects: 
+              - value: "$(./Vertragsnummer_des_Kaeufers)"
+        - predicates: edifact-o:dateContractNumberBuyer
+          objects: 
+              - value: "$(./Referenzdatum_Vertragsnummer_des_Kaeufers)"
+        - predicates: edifact-o:numberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Nummer_einr_konsolidierten_Rechnung_EAN_Code)"
+        - predicates: edifact-o:dateNumberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_einr_konsolidierten_Rechnung_EAN_Code)"
+        - predicates: edifact-o:creditNoteNumber
+          objects: 
+              - value: "$(./Gutschriftsnummer)"
+        - predicates: edifact-o:dateCreditNoteNumber
+          objects: 
+              - value: "$(./Referenzdatum_Gutschriftsnummer)"
+        - predicates: edifact-o:referenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenznummer_zu_einem_Geschaeftskontauszug_EAN_Code)"
+        - predicates: edifact-o:dateReferenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_zu_einem_Geschaeftskontauszug_EAN_Code)"
+        - predicates: edifact-o:referenceNumberCustomer
+          objects: 
+              - value: "$(./Referenzsnummer_des_Kunden)"
+        - predicates: edifact-o:dateReferenceNumberCustomer
+          objects: 
+              - value: "$(./Referenzdatum_Referenzsnummer_des_Kunden)"
+        - predicates: edifact-o:contractNumber
+          objects: 
+              - value: "$(./Vertragsnummer)"
+        - predicates: edifact-o:dateContractNumber
+          objects: 
+              - value: "$(./Referenzdatum_Vertragsnummer)"
+        - predicates: edifact-o:debitNoteNumber
+          objects: 
+              - value: "$(./Nummer_der_Belastungsanzeige)"
+        - predicates: edifact-o:dateDebitNoteNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_der_Belastungsanzeige)"
+        - predicates: edifact-o:deliveryNoteNumber
+          objects: 
+              - value: "$(./Lieferscheinnummer)"
+        - predicates: edifact-o:dateDeliveryNoteNumber
+          objects: 
+              - value: "$(./Referenzdatum_Lieferscheinnummer)"
+        - predicates: edifact-o:fiscalNumber
+          objects: 
+              - value: "$(./Steuernummer)"
+        - predicates: edifact-o:dateFiscalNumber
+          objects: 
+              - value: "$(./Referenzdatum_Steuernummer)"
+        - predicates: edifact-o:fileLineIdentifier
+          objects: 
+              - value: "$(./Bezeichner_Dateizeilen)"
+        - predicates: edifact-o:dateFileLineIdentifier
+          objects: 
+              - value: "$(./Referenzdatum_Bezeichner_Dateizeilen)"
+        - predicates: edifact-o:governmentReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_Regierung)"
+        - predicates: edifact-o:dateGovernmentReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_Regierung)"
+        - predicates: edifact-o:harmonisedSystemNumber
+          objects: 
+              - value: "$(./Nummer_harmonisiertes_System)"
+        - predicates: edifact-o:dateHarmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_harmonisiertes_System)"
+        - predicates: edifact-o:internalVendorNumber
+          objects: 
+              - value: "$(./Interne_Lieferantennummer)"
+        - predicates: edifact-o:dateInternalVendorNumber
+          objects: 
+              - value: "$(./Referenzdatum_Interne_Lieferantennummer)"
+        - predicates: edifact-o:importLicenseNumber
+          objects: 
+              - value: "$(./Import_Lizenznummer)"
+        - predicates: edifact-o:dateImportLicenseNumber
+          objects: 
+              - value: "$(./Referenzdatum_Import_Lizenznummer)"
+        - predicates: edifact-o:internalCustomerNumber
+          objects: 
+              - value: "$(./Interne_Kundennummer)"
+        - predicates: edifact-o:dateInternalCustomerNumber
+          objects: 
+              - value: "$(./Referenzdatum_Interne_Kundennummer)"
+        - predicates: p2p-o-inv:invoiceNumber
+          objects: 
+              - value: "$(./Rechnungsnummer)"
+        - predicates: edifact-o:dateInvoiceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Rechnungsnummer)"
+        - predicates: edifact-o:lineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_der_Position)"
+        - predicates: edifact-o:dateLineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_der_Position)"
+        - predicates: edifact-o:orderNumberBuyer
+          objects: 
+              - value: "$(./Auftragsnummer_Kaeufer)"
+        - predicates: edifact-o:dateOrderNumberBuyer
+          objects: 
+              - value: "$(./Referenzdatum_Auftragsnummer_Kaeufer)"
+        - predicates: edifact-o:priceListNumber
+          objects: 
+              - value: "$(./Nummer_der_Preisliste)"
+        - predicates: edifact-o:datePriceListNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_der_Preisliste)"
+        - predicates: edifact-o:paymentReference
+          objects: 
+              - value: "$(./Zahlungsreferenz)"
+        - predicates: edifact-o:datePaymentReference
+          objects: 
+              - value: "$(./Referenzdatum_Zahlungsreferenz)"
+        - predicates: edifact-o:financialAccountNumberPayee
+          objects: 
+              - value: "$(./Kontonummer_des_Zahlungsempfaenger)"
+        - predicates: edifact-o:dateFinancialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenzdatum_Kontonummer_des_Zahlungsempfaenger)"
+        - predicates: edifact-o:exportReferenceNumber
+          objects: 
+              - value: "$(./Exportreferenznummer)"
+        - predicates: edifact-o:dateExportReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Exportreferenznummer)"
+        - predicates: edifact-o:sellersReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_des_Verkaeufers)"
+        - predicates: edifact-o:dateSellersReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_des_Verkaeufers)"
+        - predicates: edifact-o:specificationNumber
+          objects: 
+              - value: "$(./Spezifikationsnummer)"
+        - predicates: edifact-o:dateSpecificationNumber
+          objects: 
+              - value: "$(./Referenzdatum_Spezifikationsnummer)"
+        - predicates: edifact-o:orderNumberSupplier
+          objects: 
+              - value: "$(./Auftragsnummer_Lieferant)"
+        - predicates: edifact-o:dateOrderNumberSupplier
+          objects: 
+              - value: "$(./Referenzdatum_Auftragsnummer_Lieferant)"
+        - predicates: edifact-o:companyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Unternehmes_oder_Ort_Regisstriernummer)"
+        - predicates: edifact-o:dateCompanyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenzdatum_Unternehmes_oder_Ort_Regisstriernummer)"
+        - predicates: edifact-o:paymentCondition
+          objects: 
+              - value: "$(./ZahlungsbedingungsArt)"
+        - predicates: edifact-o:paymentReferenceDate
+          objects: 
+              - value: "$(./ZahlungsbezugsterminTage)"
+        - predicates: edifact-o:hasAllowanceReason
+          objects: 
+              - value: "$(./Abschlag)"
+        - predicates: edifact-o:hasChargeReason
+          objects: 
+              - value: "$(./Zuschlag)"
+        - predicates: edifact-o:noDiscountAllowance
+          objects: 
+              value: "$(./Kein_Abschlag_Zuschlag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowancePercentage
+          objects: 
+              value: "$(./AbschlagProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowancePercentagePaymentConditions
+          objects: 
+              value: "$(./AbschlagProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargePercentage
+          objects: 
+              value: "$(./ZuschlagProzentsatz)"
+        - predicates: edifact-o:hasChargePercentagePaymentConditions
+          objects: 
+              value: "$(./ZuschlagProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountPercentage
+          objects: 
+              value: "$(./AbzugProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountPercentagePaymentConditions
+          objects: 
+              value: "$(./AbzugProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyPercentage
+          objects: 
+              value: "$(./StrafProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyPercentagePaymentConditions
+          objects: 
+              value: "$(./StrafProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoicePercentage
+          objects: 
+              value: "$(./RechnungsProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoicePercentagePaymentConditions
+          objects: 
+              value: "$(./RechnungsProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasVATrate
+          objects: 
+              value: "$(./Mehrwertsteuer)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGSTrate
+          objects: 
+              value: "$(./Waren_Dienstleistungssteuer)"
+              datatype: xsd:float
+        - predicates: edifact-o:deliveryCondition
+          objects: 
+              - value: "$(./Lieferbedingung)"
+        - predicates: edifact-o:priceAndDeliveryCondition
+          objects: 
+              - value: "$(./PreisUndAuslieferungsbedingung)"
+        - predicates: edifact-o:descriptionOfGoods
+          objects: 
+              - value: "$(./Warenbeschreibung)"
+        - predicates: edifact-o:generalInformation
+          objects: 
+              - value: "$(./Generelle_Informationen)"
+        - predicates: edifact-o:changeInformation
+          objects: 
+              - value: "$(./Aenderungsinformationen)"
+        - predicates: edifact-o:instructionForInvoicingParty
+          objects: 
+              - value: "$(./Anweisung_fur_Rechnungssteller)"
+        - predicates: edifact-o:otherServiceInformation
+          objects: 
+              - value: "$(./Andere_Serviceinformationen)"
+        - predicates: edifact-o:purchasingInformation
+          objects: 
+              - value: "$(./Beschaffungsinformation)"
+        - predicates: edifact-o:reportingInformation
+          objects: 
+              - value: "$(./Meldeinformationen)"
+        - predicates: edifact-o:supplierNote
+          objects: 
+              - value: "$(./Lieferantenhinweis)"
+        - predicates: edifact-o:bilateralAgreed
+          objects: 
+              - value: "$(./Bilateral_vereinbart)"
+    item:
+      sources: 
+          - test-source49
+          - test-source50
+          - test-source51
+          - test-source52
+          - test-source53
+          - test-source54
+          - test-source55
+          - test-source56
+          - test-source57
+          - test-source58
+          - test-source59
+          - test-source60
+          - test-source61
+          - test-source62
+          - test-source63
+          - test-source64
+          - test-source65
+          - test-source66
+          - test-source67
+          - test-source68
+          - test-source69
+          - test-source70
+          - test-source71
+          - test-source72
+          - test-source73
+          - test-source74
+          - test-source75
+          - test-source76
+          - test-source77
+          - test-source78
+          - test-source79
+          - test-source80
+          - test-source81
+          - test-source82
+          - test-source83
+          - test-source84
+          - test-source85
+          - test-source89
+          - test-source90
+          - test-source91
+          - test-source92
+          - test-source93
+          - test-source94
+          - test-source95
+          - test-source96
+          - test-source97
+          - test-source98
+          - test-source99
+          - test-source100
+          - test-source101
+          - test-source102
+          - test-source103
+          - test-source104
+          - test-source177
+          - test-source178
+          - test-source179
+          - test-source180
+          - test-source181
+          - test-source182
+          - test-source183
+          - test-source184
+          - test-source185
+          - test-source186
+          - test-source187
+          - test-source188
+          - test-source189
+          - test-source190
+          - test-source191
+          - test-source192
+          - test-source193
+          - test-source194
+          - test-source195
+          - test-source196
+          - test-source197
+          - test-source198
+          - test-source199
+          - test-source200
+          - test-source201
+          - test-source202
+          - test-source203
+          - test-source204
+          - test-source205
+          - test-source206
+          - test-source207
+          - test-source208
+          - test-source209
+          - test-source210
+          - test-source211
+          - test-source212
+          - test-source213
+          - test-source214
+          - test-source215
+          - test-source221
+          - test-source222
+          - test-source223
+          - test-source224
+          - test-source225
+          - test-source226
+          - test-source227
+          - test-source228
+          - test-source229
+          - test-source230
+          - test-source231
+          - test-source232
+          - test-source233
+          - test-source234
+      subjects:
+        - value: http://example.com/$(./@nid)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: p2p-o-item:item
+              type: iri 
+        - predicates: edifact-o:isItemOf 
+          objects: 
+              value: http://example.com/$(./@mid)
+              type: iri
+        - predicates: p2p-o-inv:hasInvoiceLine
+          objects: 
+              value: "$(./D_1082)"
+              datatype: xsd:integer
+        - predicates: edifact-o:hasProductIdentification
+          objects: 
+              value: "$(./Produktidentifikation)"
+              datatype: xsd:string
+        - predicates: edifact-o:hasAdditionalProductIdentification
+          objects: 
+              - value: "$(./Zusaetzliche_Produktidentifikation)"
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+              value: "$(./D_3039)"
+              datatype: xsd:integer
+        - predicates: schema:currency
+          objects: 
+              - value: "$(./Waehrung)"
+        - predicates: edifact-o:priceCurrency
+          objects: 
+              - value: "$(./WaehrungPreisangabe)"
+        - predicates: edifact-o:paymentCurrency
+          objects: 
+              - value: "$(./WaehrungZahlung)"
+        - predicates: p2p-o-item:itemName
+          objects: 
+              - value: "$(./D_7008)"
+        - predicates: edifact-o:discreteQuantity
+          objects: 
+              value: "$(./Menge_Diskret)"
+              datatype: xsd:float
+        - predicates: edifact-o:despatchQuantity
+          objects: 
+              value: "$(./Menge_Sendungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:deliveredQuantity
+          objects: 
+              value: "$(./Menge_Geliefert)"
+              datatype: xsd:float
+        - predicates: p2p-o-doc-line:invoicedQuantity
+          objects: 
+              value: "$(./Menge_Berechnet)"
+              datatype: xsd:float
+        - predicates: p2p-o-doc-line:invoicedQuantityUnitOfMeasure
+          objects: 
+              - value: "$(./Berechnete_Einheit)"
+        - predicates: edifact-o:consumerUnitsInTradingUnitQuantity
+          objects: 
+              value: "$(./Anzahl_der_Verbrauchereinheiten_in_einer_Handelseinheit)"
+              datatype: xsd:float
+        - predicates: edifact-o:returnQuantity
+          objects: 
+              value: "$(./Menge_Retour)"
+              datatype: xsd:float
+        - predicates: edifact-o:deliveredQuantity
+          objects: 
+              value: "$(./Menge_Liefer)"
+              datatype: xsd:float
+        - predicates: edifact-o:withoutCalculationQuantity
+          objects: 
+              value: "$(./Menge_ohne_Berechnung)"
+              datatype: xsd:float
+        - predicates: edifact-o:recivedAndAcceptedQuantity
+          objects: 
+              value: "$(./Menge_Erhalten_und_akzeptiert)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasRequiredDeliveryDate
+          objects: 
+              - value: "$(./geforderter_Liefertermin)"
+        - predicates: frapo:hasInvoiceDate
+          objects: 
+              - value: "$(./Rechnungsdatum)"
+        - predicates: frapo:PurchaseDate
+          objects: 
+              - value: "$(./Bestelldatum)"
+        - predicates: edifact-o:effectiveDate
+          objects: 
+              - value: "$(./Gueltigkeitsdatum)"
+        - predicates: frapo:hasDispatchDate
+          objects: 
+              - value: "$(./Versanddatum)"
+        - predicates: edifact-o:hasTermsDiscountDueDate
+          objects: 
+              - value: "$(./Faelligkeitsdatum_bei_Skontoabzug)"
+        - predicates: edifact-o:hasTermsNetDueDate
+          objects: 
+              - value: "$(./Faelligkeitsdatum_bei_Zahlung_ohne_Abzug)"
+        - predicates: p2p-o-inv:actualDeliveryDate
+          objects: 
+              - value: "$(./tatsaechliches_Lieferdatum)"
+        - predicates: edifact-o:receiptGoodsDate
+          objects: 
+              - value: "$(./Wareneingangsdatum)"
+        - predicates: edifact-o:exhangeRateDate
+          objects: 
+              - value: "$(./Wechselkursdatum)"
+        - predicates: edifact-o:documentDate
+          objects: 
+              - value: "$(./Dokumenten_oder_Nachrichten_Datum)"
+        - predicates: edifact-o:referenceDate
+          objects: 
+              - value: "$(./Referenzdatum)"
+        - predicates: edifact-o:valutaDate 
+          objects: 
+              - value: "$(./ValutaDatum)"
+        - predicates: edifact-o:calculationPeriod
+          objects: 
+              - value: "$(./Abechnungszeitraum)"
+        - predicates: edifact-o:taxPeriod
+          objects: 
+              - value: "$(./Steuerperiode)"
+        - predicates: edifact-o:loadPeriod
+          objects: 
+              - value: "$(./Belastungsperiode)"
+        - predicates: edifact-o:discountTerminationDate
+          objects: 
+              - value: "$(./Datum_Rabattbeendigung)"
+        - predicates: edifact-o:hasNetpriceOfItem
+          objects: 
+              value: "$(./Nettokalkulation)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoiceprice
+          objects: 
+              value: "$(./Rechnungspreis)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasNetpricePerUnit
+          objects: 
+              value: "$(./Nettopreis_pro_Einheit)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGrosspriceOfItem
+          objects: 
+              value: "$(./Bruttokalkulation)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGrosspricePerUnit
+          objects: 
+              value: "$(./Bruttopreis_pro_Einheit)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPriceSource
+          objects: 
+              value: "$(./PreisQuelle)"
+        - predicates: edifact-o:hasPriceType
+          objects: 
+              value: "$(./PreisArt)"
+        - predicates: edifact-o:unitPriceBasis
+          objects: 
+              value: "$(./D_5284)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalLineItemAmount
+          objects: 
+              value: "$(./Gesamtpositionsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxableAmount
+          objects: 
+              value: "$(./Steuerpflichtiger_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalDutyTaxFeeAmount
+          objects: 
+              value: "$(./Gesamter_Zoll_Steuer_Gebuehrenbetrag_der_Nachricht)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmount
+          objects: 
+              value: "$(./Gesamtbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasUnitPrice
+          objects: 
+              value: "$(./Preis_pro_Einheit)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasVATamount
+          objects: 
+              value: "$(./Mehrwertsteuer_Betrag)"
+              datatype: xsd:float 
+        - predicates: edifact-o:hasVATfirstValue
+          objects: 
+              value: "$(./Umsatzsteuer_erster_Wert)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxAmount
+          objects: 
+              value: "$(./Steuerbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAmount
+          objects: 
+              value: "$(./Zuschlagsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowanceAmount
+          objects: 
+              value: "$(./Abschlagsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountDueOrPayable
+          objects: 
+              value: "$(./Faelliger_Betrag_oder_zahlbarerBetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasRemittedtAmount
+          objects: 
+              value: "$(./Uebermittelter_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasCashDiscount
+          objects: 
+              value: "$(./Barzahlungsrabatt)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAllowanceBasis
+          objects: 
+              value: "$(./Zu_Abschlagsbasis)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountAmount
+          objects: 
+              value: "$(./Abzug_Rabatt)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDueDeductionAmount
+          objects: 
+              value: "$(./Faelliger_Abzugsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasBasicTaxAmount
+          objects: 
+              value: "$(./Steuergrundbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasFreightCharge
+          objects: 
+              value: "$(./Frachtgebuehr)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalGoodsPosition
+          objects: 
+              value: "$(./WarenpositionInsgesamt)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasOriginalAmount
+          objects: 
+              value: "$(./Originalbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPaymentDiscountAmount
+          objects: 
+              value: "$(./Zahlungskuerzung)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountMessage
+          objects: 
+              value: "$(./Gesamtbetrag_Nachricht)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountUnderPaymentReduction
+          objects: 
+              value: "$(./Gesamtbetrag_unterliegt_Zahlungskuerzung)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPrepaidAmount
+          objects: 
+              value: "$(./Vorausbezahlter_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAdditionsAndDeductions
+          objects: 
+              value: "$(./GesamtZu_Abschlaege)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyAmount
+          objects: 
+              value: "$(./Strafbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasLineItemAmount
+          objects: 
+              value: "$(./Positionsbetrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountUnderPriceAdjustment
+          objects: 
+              value: "$(./Betrag_unterliegt_einer_Preisberichtigung)"
+              datatype: xsd:float
+        - predicates: edifact-o:proformaInvoiceNumber
+          objects: 
+              - value: "$(./Proforma_Rechnungsnummer)"
+        - predicates: edifact-o:dateProformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Proforma_Rechnungsnummer)"
+        - predicates: edifact-o:orderNumberDelivery
+          objects: 
+              - value: "$(./Nummer_Lieferauftrag)"
+        - predicates: edifact-o:dateOrderNumberDelivery
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_Lieferauftrag)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./Nummer_Lieferschein)"
+        - predicates: edifact-o:dateDespatchAdviceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_Lieferschein)"
+        - predicates: edifact-o:offerNumber
+          objects: 
+              - value: "$(./Angebotsnummer)"
+        - predicates: edifact-o:dateOfferNumberr
+          objects: 
+              - value: "$(./Referenzdatum_Angebotsnummer)"
+        - predicates: edifact-o:customsTariffNumber
+          objects: 
+              - value: "$(./Zolltarifnummer)"
+        - predicates: edifact-o:dateCustomsTariffNumber
+          objects: 
+              - value: "$(./Referenzdatum_Zolltarifnummer)"
+        - predicates: edifact-o:originatorReference
+          objects: 
+              - value: "$(./Referenz_des_Absenders)"
+        - predicates: edifact-o:dateOriginatorReference
+          objects: 
+              - value: "$(./Referenzdatum_Referenz_des_Absenders)"
+        - predicates: edifact-o:accountsReceivableNumber
+          objects: 
+              - value: "$(./Nummer_des_Forderungskontos)"
+        - predicates: edifact-o:dateAccountsReceivableNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_des_Forderungskontos)"
+        - predicates: edifact-o:beneficiaryReference
+          objects: 
+              - value: "$(./Referenz_des_Beguenstigten)"
+        - predicates: edifact-o:dateBeneficiaryReference
+          objects: 
+              - value: "$(./Referenzdatum_Referenz_des_Beguenstigten)"
+        - predicates: edifact-o:numberOfBundleMessages
+          objects: 
+              - value: "$(./Nummer_eines_Buendels_von_Nachrichten)"
+        - predicates: edifact-o:dateNumberOfBundleMessages
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_eines_Buendels_von_Nachrichten)"
+        - predicates: edifact-o:receivingAdviceNumber
+          objects: 
+              - value: "$(./Wareneingangsmeldung_Nummer)"
+        - predicates: edifact-o:dateReceivingAdviceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Wareneingangsmeldung_Nummer)"
+        - predicates: edifact-o:additionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Zusaetzliche_Partneridentifikation_EAN_Code)"
+        - predicates: edifact-o:dateAdditionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenzdatum_Zusaetzliche_Partneridentifikation_EAN_Code)"
+        - predicates: edifact-o:contractNumberBuyer
+          objects: 
+              - value: "$(./Vertragsnummer_des_Kaeufers)"
+        - predicates: edifact-o:dateContractNumberBuyer
+          objects: 
+              - value: "$(./Referenzdatum_Vertragsnummer_des_Kaeufers)"
+        - predicates: edifact-o:numberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Nummer_einr_konsolidierten_Rechnung_EAN_Code)"
+        - predicates: edifact-o:dateNumberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_einr_konsolidierten_Rechnung_EAN_Code)"
+        - predicates: edifact-o:creditNoteNumber
+          objects: 
+              - value: "$(./Gutschriftsnummer)"
+        - predicates: edifact-o:dateCreditNoteNumber
+          objects: 
+              - value: "$(./Referenzdatum_Gutschriftsnummer)"
+        - predicates: edifact-o:referenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenznummer_zu_einem_Geschaeftskontauszug_EAN_Code)"
+        - predicates: edifact-o:dateReferenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_zu_einem_Geschaeftskontauszug_EAN_Code)"
+        - predicates: edifact-o:referenceNumberCustomer
+          objects: 
+              - value: "$(./Referenzsnummer_des_Kunden)"
+        - predicates: edifact-o:dateReferenceNumberCustomer
+          objects: 
+              - value: "$(./Referenzdatum_Referenzsnummer_des_Kunden)"
+        - predicates: edifact-o:contractNumber
+          objects: 
+              - value: "$(./Vertragsnummer)"
+        - predicates: edifact-o:dateContractNumber
+          objects: 
+              - value: "$(./Referenzdatum_Vertragsnummer)"
+        - predicates: edifact-o:debitNoteNumber
+          objects: 
+              - value: "$(./Nummer_der_Belastungsanzeige)"
+        - predicates: edifact-o:dateDebitNoteNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_der_Belastungsanzeige)"
+        - predicates: edifact-o:deliveryNoteNumber
+          objects: 
+              - value: "$(./Lieferscheinnummer)"
+        - predicates: edifact-o:dateDeliveryNoteNumber
+          objects: 
+              - value: "$(./Referenzdatum_Lieferscheinnummer)"
+        - predicates: edifact-o:fiscalNumber
+          objects: 
+              - value: "$(./Steuernummer)"
+        - predicates: edifact-o:dateFiscalNumber
+          objects: 
+              - value: "$(./Referenzdatum_Steuernummer)"
+        - predicates: edifact-o:fileLineIdentifier
+          objects: 
+              - value: "$(./Bezeichner_Dateizeilen)"
+        - predicates: edifact-o:dateFileLineIdentifier
+          objects: 
+              - value: "$(./Referenzdatum_Bezeichner_Dateizeilen)"
+        - predicates: edifact-o:governmentReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_Regierung)"
+        - predicates: edifact-o:dateGovernmentReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_Regierung)"
+        - predicates: edifact-o:harmonisedSystemNumber
+          objects: 
+              - value: "$(./Nummer_harmonisiertes_System)"
+        - predicates: edifact-o:dateHarmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_harmonisiertes_System)"
+        - predicates: edifact-o:internalVendorNumber
+          objects: 
+              - value: "$(./Interne_Lieferantennummer)"
+        - predicates: edifact-o:dateInternalVendorNumber
+          objects: 
+              - value: "$(./Referenzdatum_Interne_Lieferantennummer)"
+        - predicates: edifact-o:importLicenseNumber
+          objects: 
+              - value: "$(./Import_Lizenznummer)"
+        - predicates: edifact-o:dateImportLicenseNumber
+          objects: 
+              - value: "$(./Referenzdatum_Import_Lizenznummer)"
+        - predicates: edifact-o:internalCustomerNumber
+          objects: 
+              - value: "$(./Interne_Kundennummer)"
+        - predicates: edifact-o:dateInternalCustomerNumber
+          objects: 
+              - value: "$(./Referenzdatum_Interne_Kundennummer)"
+        - predicates: p2p-o-inv:invoiceNumber
+          objects: 
+              - value: "$(./Rechnungsnummer)"
+        - predicates: edifact-o:dateInvoiceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Rechnungsnummer)"
+        - predicates: edifact-o:lineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_der_Position)"
+        - predicates: edifact-o:dateLineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_der_Position)"
+        - predicates: edifact-o:orderNumberBuyer
+          objects: 
+              - value: "$(./Auftragsnummer_Kaeufer)"
+        - predicates: edifact-o:dateOrderNumberBuyer
+          objects: 
+              - value: "$(./Referenzdatum_Auftragsnummer_Kaeufer)"
+        - predicates: edifact-o:priceListNumber
+          objects: 
+              - value: "$(./Nummer_der_Preisliste)"
+        - predicates: edifact-o:datePriceListNumber
+          objects: 
+              - value: "$(./Referenzdatum_Nummer_der_Preisliste)"
+        - predicates: edifact-o:paymentReference
+          objects: 
+              - value: "$(./Zahlungsreferenz)"
+        - predicates: edifact-o:datePaymentReference
+          objects: 
+              - value: "$(./Referenzdatum_Zahlungsreferenz)"
+        - predicates: edifact-o:financialAccountNumberPayee
+          objects: 
+              - value: "$(./Kontonummer_des_Zahlungsempfaenger)"
+        - predicates: edifact-o:dateFinancialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenzdatum_Kontonummer_des_Zahlungsempfaenger)"
+        - predicates: edifact-o:exportReferenceNumber
+          objects: 
+              - value: "$(./Exportreferenznummer)"
+        - predicates: edifact-o:dateExportReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Exportreferenznummer)"
+        - predicates: edifact-o:sellersReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_des_Verkaeufers)"
+        - predicates: edifact-o:dateSellersReferenceNumber
+          objects: 
+              - value: "$(./Referenzdatum_Referenznummer_des_Verkaeufers)"
+        - predicates: edifact-o:specificationNumber
+          objects: 
+              - value: "$(./Spezifikationsnummer)"
+        - predicates: edifact-o:dateSpecificationNumber
+          objects: 
+              - value: "$(./Referenzdatum_Spezifikationsnummer)"
+        - predicates: edifact-o:orderNumberSupplier
+          objects: 
+              - value: "$(./Auftragsnummer_Lieferant)"
+        - predicates: edifact-o:dateOrderNumberSupplier
+          objects: 
+              - value: "$(./Referenzdatum_Auftragsnummer_Lieferant)"
+        - predicates: edifact-o:companyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Unternehmes_oder_Ort_Regisstriernummer)"
+        - predicates: edifact-o:dateCompanyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenzdatum_Unternehmes_oder_Ort_Regisstriernummer)"
+        - predicates: edifact-o:itemNumberBuyer
+          objects: 
+              - value: "$(./Artikelnummer_des_Kaeufers)"
+        - predicates: edifact-o:internationalArticleNumber
+          objects: 
+              - value: "$(./International_Article_Number)"
+        - predicates: edifact-o:actionVariantNumber
+          objects: 
+              - value: "$(./Nummer_der_Aktionsvariante)"
+        - predicates: edifact-o:harmonisedSystem
+          objects: 
+              - value: "$(./Harmonisiertes_System)"
+        - predicates: edifact-o:nationalProductGroupCode
+          objects: 
+              - value: "$(./Nationaler_Produktgruppencode)"
+        - predicates: edifact-o:partNumberBuyer
+          objects: 
+              - value: "$(./Teilnummer_des_Kaeufers)"
+        - predicates: edifact-o:itemNumberManufacturer
+          objects: 
+              - value: "$(./Artikelnummer_des_Herstellers)"
+        - predicates: edifact-o:positionLineNumber
+          objects: 
+              - value: "$(./Positionszeilennummer)"
+        - predicates: edifact-o:itemNumberSupplier
+          objects: 
+              - value: "$(./Artikelnummer_des_Lieferanten)"
+        - predicates: edifact-o:universalProductCode
+          objects: 
+              - value: "$(./Universal_Prodcut_Code)" 
+        - predicates: edifact-o:measurements
+          objects: 
+              - value: "$(./Masangabe)"
+        - predicates: edifact-o:hasPhysicalDimension
+          objects: 
+              - value: "$(./Physische_Abmessung)"
+        - predicates: edifact-o:hasStockRestriction
+          objects: 
+              - value: "$(./Lagerbeschraenkung)"
+        - predicates: edifact-o:hasTransportRestriction
+          objects: 
+              - value: "$(./Beschraekung_Transportmittels)"
+        - predicates: edifact-o:hasNetWeightPerUnit
+          objects: 
+              - value: "$(./Nettogewicht_pro_Einheit)"
+        - predicates: edifact-o:hasNetWeight
+          objects: 
+              - value: "$(./Nettonettogewicht)"
+        - predicates: edifact-o:hasHeightDimension
+          objects: 
+              - value: "$(./Hoehenmass)"
+        - predicates: edifact-o:hasLengthMeasurements
+          objects: 
+              - value: "$(./Laengenmassangaben)"
+        - predicates: edifact-o:widthDimension
+          objects: 
+              - value: "$(./Breitenabmessung)"
+        - predicates: edifact-o:paymentCondition
+          objects: 
+              - value: "$(./ZahlungsbedingungsArt)"
+        - predicates: edifact-o:paymentReferenceDate
+          objects: 
+              - value: "$(./ZahlungsbezugsterminTage)"
+        - predicates: edifact-o:hasAllowanceReason
+          objects: 
+              - value: "$(./Abschlag)"
+        - predicates: edifact-o:hasChargeReason
+          objects: 
+              - value: "$(./Zuschlag)"
+        - predicates: edifact-o:noDiscountAllowance
+          objects: 
+              - value: "$(./Kein_Abschlag_Zuschlag)"
+        - predicates: edifact-o:hasAllowancePercentage
+          objects: 
+              value: "$(./AbschlagProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargePercentage
+          objects: 
+              value: "$(./ZuschlagProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountPercentage
+          objects: 
+              value: "$(./AbzugProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyPercentage
+          objects: 
+              value: "$(./StrafProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoicePercentage
+          objects: 
+              value: "$(./RechnungsProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasVATrate
+          objects: 
+              value: "$(./Mehrwertsteuer)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGSTrate
+          objects: 
+              value: "$(./Waren_Dienstleistungssteuer)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasQuantityUnit
+          objects: 
+              - value: "$(./D_QTYMaEinheit)"
+        - predicates: edifact-o:hasPriceUnit
+          objects: 
+              - value: "$(./D_PRIMaEinheit)"
+        - predicates: edifact-o:hasUnit
+          objects: 
+              - value: "$(./D_MaEinheit)"
+        - predicates: edifact-o:hasDiscreteQuantityWithUnit
+          objects: 
+              - value: "$(./Diskrete_Menge_Einheit)"
+        - predicates: edifact-o:deliveredQuantityWithUnit
+          objects: 
+              - value: "$(./Gelieferte_Menge_Einheit)"
+        - predicates: edifact-o:deliveredQuantityWithUnit
+          objects: 
+              - value: "$(./Ausgelieferte_Menge_Einheit)"
+        - predicates: p2p-o-doc-line:invoicedQuantityUnitOfMeasure
+          objects: 
+              - value: "$(./Berechnete_Menge_Einheit)"
+        - predicates: edifact-o:consumerUnitsInTradingUnitQuantityWithUnit
+          objects: 
+              - value: "$(./Anzahl_der_Verbrauchereinheiten_in_einer_Handelseinheit)"
+        - predicates: edifact-o:returnQuantityWithUnit
+          objects: 
+              - value: "$(./Retourmenge_Einheit)"
+        - predicates: edifact-o:deliveredQuantityWithUnit
+          objects: 
+              - value: "$(./Liefermenge_Einheit)"
+        - predicates: edifact-o:withoutCalculationQuantityWithUnit
+          objects: 
+              - value: "$(./Menge_ohne_Berechnung_Einheit)"
+        - predicates: edifact-o:recivedAndAcceptedQuantityWithUnit
+          objects: 
+              - value: "$(./Erhalten_und_akzeptiert_Einheit)"
+        - predicates: edifact-o:descriptionOfGoods
+          objects: 
+              - value: "$(./Warenbeschreibung)"
+        - predicates: edifact-o:generalInformation
+          objects: 
+              - value: "$(./Generelle_Informationen)"
+        - predicates: edifact-o:priceCondition
+          objects: 
+              - value: "$(./Preis_Bedingungen)"
+        - predicates: edifact-o:informationCustomsDeclaration
+          objects: 
+              - value: "$(./Informatioen_zur_Zollerklaerung)"
+        - predicates: edifact-o:changeInformation
+          objects: 
+              - value: "$(./Aenderungsinformationen)"
+        - predicates: edifact-o:instructionForInvoicingParty
+          objects: 
+              - value: "$(./Anweisung_fur_Rechnungssteller)"
+        - predicates: edifact-o:otherServiceInformation
+          objects: 
+              - value: "$(./Andere_Serviceinformationen)"
+        - predicates: edifact-o:purchasingInformation
+          objects: 
+              - value: "$(./Beschaffungsinformation)"
+        - predicates: edifact-o:reportingInformation
+          objects: 
+              - value: "$(./Meldeinformationen)"
+        - predicates: edifact-o:supplierNote
+          objects: 
+              - value: "$(./Lieferantenhinweis)"
+        - predicates: edifact-o:bilateralAgreed
+          objects: 
+              - value: "$(./Bilateral_vereinbart)"
+    company:
+      sources: 
+          - test-source11
+          - test-source12
+          - test-source13
+          - test-source14
+          - test-source15
+          - test-source16
+          - test-source17
+          - test-source86
+          - test-source87
+          - test-source88
+          - test-source134
+          - test-source135
+          - test-source136
+          - test-source137
+          - test-source138
+          - test-source139
+          - test-source140
+          - test-source141
+          - test-source142
+          - test-source216
+          - test-source217
+          - test-source218
+          - test-source219
+          - test-source220
+      subjects:
+        - value: http://example.com/$(./D_3039)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: org:FormalOrganization
+              type: iri 
+        - predicates: agentRole:performsAgentRole 
+          objects: 
+              value: http://example.com/$(./@organisation)
+              type: iri
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+            value: "$(./D_3039)"
+            datatype: xsd:integer
+    agentRole:
+      sources: 
+          - test-source11
+          - test-source12
+          - test-source13
+          - test-source14
+          - test-source15
+          - test-source16
+          - test-source17
+          - test-source86
+          - test-source87
+          - test-source88
+          - test-source134
+          - test-source135
+          - test-source136
+          - test-source137
+          - test-source138
+          - test-source139
+          - test-source140
+          - test-source141
+          - test-source142
+          - test-source216
+          - test-source217
+          - test-source218
+          - test-source219
+          - test-source220
+      subjects:
+        - value: http://example.com/$(./@organisation)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects:
+              value: http://example.com/$(./@agentRole)
+              type: iri
+        - predicates: agentRole:isProvidedBy 
+          objects: 
+              value: http://example.com/$(./@details)
+              type: iri
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+              value: "$(./D_3039)"
+              datatype: xsd:integer
+        - predicates: p2p-o-org:formalName
+          objects: 
+              - value: $(./D_3036)
+        - predicates: vcard:hasStreetAddress
+          objects: 
+              - value: "$(./D_3042)"
+        - predicates: vcard:postalCode
+          objects: 
+              - value: "$(./D_3251)"
+        - predicates: edifact-o:hasCity
+          objects: 
+              - value: "$(./D_3164)"
+        - predicates: frapo:hasCountryCode
+          objects: 
+              - value: "$(./D_3207)"
+        - predicates: edifact-o:hasCountry
+          objects: 
+              - value: "$(./D_Country)"
+        - predicates: p2p-o-org:countrySubdivision
+          objects: 
+              - value: "$(./D_3229)"  
+        - predicates: edifact-o:hasAmountDueOrPayable
+          objects: 
+              - value: "$(./Faelliger_Betrag_oder_zahlbarerBetrag)"
+        - predicates: edifact-o:hasRemittedtAmount
+          objects: 
+              value: "$(./Uebermittelter_Betrag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasCashDiscount
+          objects: 
+              - value: "$(./Barzahlungsrabatt)"
+        - predicates: edifact-o:hasChargeAllowanceBasis
+          objects: 
+              - value: "$(./Zu_Abschlagsbasis)"
+        - predicates: edifact-o:hasDiscountAmount
+          objects: 
+              - value: "$(./Abzug_Rabatt)"
+        - predicates: edifact-o:hasTotalAmountUnderPaymentReduction
+          objects: 
+              - value: "$(./Gesamtbetrag_unterliegt_Zahlungskuerzung)"
+        - predicates: edifact-o:hasPrepaidAmount
+          objects: 
+              - value: "$(./Vorausbezahlter_Betrag)"
+        - predicates: edifact-o:hasAmountUnderPriceAdjustment
+          objects: 
+              - value: "$(./Betrag_unterliegt_einer_Preisberichtigung)"
+        - predicates: edifact-o:proformaInvoiceNumber
+          objects: 
+              - value: "$(./Proforma_Rechnungsnummer)"
+        - predicates: edifact-o:orderNumberDelivery
+          objects: 
+              - value: "$(./Nummer_Lieferauftrag)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./Nummer_Lieferschein)"
+        - predicates: edifact-o:offerNumber
+          objects: 
+              - value: "$(./Angebotsnummer)"
+        - predicates: edifact-o:customsTariffNumber
+          objects: 
+              - value: "$(./Zolltarifnummer)"
+        - predicates: edifact-o:originatorReference
+          objects: 
+              - value: "$(./Referenz_des_Absenders)"
+        - predicates: edifact-o:relatedDocumentNumber
+          objects: 
+              - value: "$(./zugehoerige_Dokumentennummer)"
+        - predicates: edifact-o:accountsReceivableNumber
+          objects: 
+              - value: "$(./Nummer_des_Forderungskontos)"
+        - predicates: edifact-o:beneficiaryReference
+          objects: 
+              - value: "$(./Referenz_des_Beguenstigten)"
+        - predicates: edifact-o:numberOfBundleMessages
+          objects: 
+              - value: "$(./Nummer_eines_Buendels_von_Nachrichten)"
+        - predicates: edifact-o:receivingAdviceNumber
+          objects: 
+              - value: "$(./Wareneingangsmeldung_Nummer)"
+        - predicates: edifact-o:additionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Zusaetzliche_Partneridentifikation_EAN_Code)"
+        - predicates: edifact-o:contractNumberBuyer
+          objects: 
+              - value: "$(./Vertragsnummer_des_Kaeufers)"
+        - predicates: edifact-o:numberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Nummer_einr_konsolidierten_Rechnung_EAN_Code)"
+        - predicates: edifact-o:creditNoteNumber
+          objects: 
+              - value: "$(./Gutschriftsnummer)"
+        - predicates: edifact-o:referenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenznummer_zu_einem_Geschaeftskontauszug_EAN_Code)"
+        - predicates: edifact-o:referenceNumberCustomer
+          objects: 
+              - value: "$(./Referenzsnummer_des_Kunden)"
+        - predicates: edifact-o:contractNumber
+          objects: 
+              - value: "$(./Vertragsnummer)"
+        - predicates: edifact-o:debitNoteNumber
+          objects: 
+              - value: "$(./Nummer_der_Belastungsanzeige)"
+        - predicates: edifact-o:deliveryNoteNumber
+          objects: 
+              - value: "$(./Lieferscheinnummer)"
+        - predicates: edifact-o:fiscalNumber
+          objects: 
+              - value: "$(./Steuernummer)"
+        - predicates: edifact-o:fileLineIdentifier
+          objects: 
+              - value: "$(./Bezeichner_Dateizeilen)"
+        - predicates: edifact-o:governmentReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_Regierung)"
+        - predicates: edifact-o:harmonisedSystemNumber
+          objects: 
+              - value: "$(./Nummer_harmonisiertes_System)"
+        - predicates: edifact-o:internalVendorNumber
+          objects: 
+              - value: "$(./Interne_Lieferantennummer)"
+        - predicates: edifact-o:importLicenseNumber
+          objects: 
+              - value: "$(./Import_Lizenznummer)"
+        - predicates: edifact-o:internalCustomerNumber
+          objects: 
+              - value: "$(./Interne_Kundennummer)"
+        - predicates: p2p-o-inv:invoiceNumber
+          objects: 
+              - value: "$(./Rechnungsnummer)"
+        - predicates: edifact-o:lineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_der_Position)"
+        - predicates: edifact-o:orderNumberBuyer
+          objects: 
+              - value: "$(./Auftragsnummer_Kaeufer)"
+        - predicates: edifact-o:priceListNumber
+          objects: 
+              - value: "$(./Nummer_der_Preisliste)"
+        - predicates: edifact-o:paymentReference
+          objects: 
+              - value: "$(./Zahlungsreferenz)"
+        - predicates: edifact-o:financialAccountNumberPayee
+          objects: 
+              - value: "$(./Kontonummer_des_Zahlungsempfaenger)"
+        - predicates: edifact-o:exportReferenceNumber
+          objects: 
+              - value: "$(./Exportreferenznummer)"
+        - predicates: edifact-o:sellersReferenceNumber
+          objects: 
+              - value: "$(./Referenznummer_des_Verkaeufers)"
+        - predicates: edifact-o:specificationNumber
+          objects: 
+              - value: "$(./Spezifikationsnummer)"
+        - predicates: p2p-o-org:VATIdentifier
+          objects: 
+              - value: "$(./Umsatzsteuernummer)"
+        - predicates: edifact-o:hasVATIdentifierBuyer
+          objects: 
+              - value: "$(./Umsatzsteuernummer_Kaeufer)"
+        - predicates: edifact-o:hasVATIdentifierDeliveryParty
+          objects: 
+              - value: "$(./Umsatzsteuernummer_Lieferanschrift)"
+        - predicates: edifact-o:hasVATIdentifierInvoicee
+          objects: 
+              - value: "$(./Umsatzsteuernummer_Rechnungsempfaenger)"
+        - predicates: edifact-o:hasVATIdentifierPayer
+          objects: 
+              - value: "$(./Umsatzsteuernummer_Bezahler)"
+        - predicates: edifact-o:hasVATIdentifierSupplier
+          objects: 
+              - value: "$(./Umsatzsteuernummer_Lieferant)"
+        - predicates: edifact-o:orderNumberSupplier
+          objects: 
+              - value: "$(./Auftragsnummer_Lieferant)"
+        - predicates: edifact-o:companyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Unternehmes_oder_Ort_Regisstriernummer)"
+        - predicates: edifact-o:paymentCondition
+          objects: 
+              - value: "$(./ZahlungsbedingungsArt)"
+        - predicates: edifact-o:paymentReferenceDate
+          objects: 
+              - value: "$(./ZahlungsbezugsterminTage)"
+        - predicates: edifact-o:hasVATrate
+          objects: 
+              value: "$(./Mehrwertsteuer)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGSTrate
+          objects: 
+              value: "$(./Waren_Dienstleistungssteuer)"
+              datatype: xsd:float
+        - predicates: edifact-o:contactPersonAccounting
+          objects: 
+              - value: "$(./Ansprechpartner_Buchhaltung)"
+        - predicates: edifact-o:contactPersonCreditorAccounting
+          objects: 
+              - value: "$(./Ansprechpartner_Kreditorenbuchhaltung)"
+        - predicates: edifact-o:contactPersonReceivableAccounting
+          objects: 
+              - value: "$(./Ansprechpartner_Debitorenbuchaltung)"
+        - predicates: edifact-o:contactPersonIncomingGoods
+          objects: 
+              - value: "$(./Ansprechpartner_Wareneingang)"
+        - predicates: edifact-o:contactPersonInformation
+          objects: 
+              - value: "$(./Ansprechpartner_Information)"
+        - predicates: edifact-o:contactPersonPurchasingDepartment
+          objects: 
+              - value: "$(./Ansprechpartner_Einkaufabteilung)"
+        - predicates: edifact-o:contactPersonSalesDepartment
+          objects: 
+              - value: "$(./Ansprechpartner_Verkaufsabteilung)"
+        - predicates: edifact-o:contactPersonEmailAddress
+          objects: 
+              - value: "$(./Ansprechpartner_EmailAdresse)"
+        - predicates: edifact-o:contactPersonFaxNumber
+          objects: 
+              - value: "$(./Ansprechpartner_TelefaxNummer)"
+        - predicates: edifact-o:contactPersonTelefonNumber
+          objects: 
+              - value: "$(./Ansprechpartner_TelefonNummer)"
+        - predicates: edifact-o:contactPersonTelexNumber
+          objects: 
+              - value: "$(./Ansprechpartner_TelexNummer)"
+        - predicates: edifact-o:contactPersonX400Number
+          objects: 
+              - value: "$(./Ansprechpartner_X400Nummer)"
+        - predicates: edifact-o:contactDepartmentPerson
+          objects: 
+              - value: "$(./D_3412)"
