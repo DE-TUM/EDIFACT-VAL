@@ -1081,7 +1081,6 @@ def ProProcessingStep2():
                 PositionOrMessageRFF("Spezifikationsnummer") 
             elif elem.text == "VA":
                 PositionOrMessageRFF("Umsatzsteuernummer")
-                #PositionOrMessageRFF("Umsatzsteuernummer_"+ root.find(f'.//D_PaFu[@nid="{nIds}"]').text)
             elif elem.text == "VN":
                 PositionOrMessageRFF("Auftragsnummer_Lieferant") 
             elif elem.text == "XA":
@@ -1164,7 +1163,7 @@ def ProProcessingStep2():
             if elem.text == "1":
                 PositionOrMessageMOA("Umsatzsteuer_erster_Wert")
             elif elem.text == "8":
-                PositionOrMessageMOA( root.find(f'.//D_AlcEx[@group="{group}"]').text + "sbetrag") # Integration der Unterscheding von zu- und Abschlag 
+                PositionOrMessageMOA( root.find(f'.//D_AlcEx[@group="{group}"]').text + "sbetrag") 
             elif elem.text == "9":
                 PositionOrMessageMOA("Faelliger_Betrag_oder_zahlbarerBetrag")
             elif elem.text == "12":
@@ -1224,8 +1223,6 @@ def ProProcessingStep2():
             else:
                 PositionOrMessageMOA("nicht_vorhanden")
         if elem.tag == "D_7143":
-            #parentC212 = root.find(f'.//{elem.tag}[@id="{elem.attrib["id"]}"]/..')
-            #parentgroupC212 =(root.find(f'.//{parentC212.tag}[@id="{elem.attrib["id"]}"]/..').attrib["parent"])
             if elem.text == "BP":
                 addExplainSubjectC212("Teilnummer_des_Kaeufers")
             elif elem.text == "EN":
@@ -1404,7 +1401,6 @@ def ProProcessingStep2():
         
     return tree.write(folder_path + 'INVOIC1.xml')
 
-#Add Elemnts which combine the created descriping elment with the value of the described element 
 def ProProcessingStep3():
     tree1 = ET.parse(folder_path +'INVOIC1.xml')
     root1 = tree1.getroot()
@@ -1452,7 +1448,6 @@ def rmlmapper_bash():
     
 def yarrrmlparser_batch():
     p = Popen([folder_path + 'yarrrmlparser.bat'], stdout = PIPE , stderr = PIPE)
-    print(2)
     p.communicate()
     p.wait()
 
@@ -1478,7 +1473,6 @@ def validates(process):
                                         serialize_report_graph=True)
     result = v_text.split("\n")
     message_lines = [line for line in result if line.strip().startswith("Message:")]
-    #print(message_lines)
     for j in range(len(message_lines)):
         parts = message_lines[j].split(';')
         parts = [part.strip() for part in parts]
