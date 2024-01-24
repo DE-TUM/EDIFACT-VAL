@@ -1095,7 +1095,7 @@ mappings:
       predicateobjects:
         - predicates: rdf:type 
           objects: 
-              value: p2p-o-doc:E-Invoice
+              value: edifact-o:E-Invoice
               type: iri
         - predicates: edifact-o:followsStandard
           objects: 
@@ -1948,11 +1948,11 @@ mappings:
       predicateobjects:
         - predicates: rdf:type 
           objects: 
-              value: p2p-o-item:item
+              value: edifact-o:item
               type: iri 
         - predicates: edifact-o:isItemOf 
           objects: 
-              value: http://example.com/$(./@mid)
+              value: http://example.com/$(./@details)
               type: iri
         - predicates: p2p-o-inv:hasInvoiceLine
           objects: 
@@ -2635,7 +2635,7 @@ mappings:
       predicateobjects:
         - predicates: rdf:type 
           objects: 
-              value: org:FormalOrganization
+              value: edifact-o:FormalOrganization
               type: iri 
         - predicates: agentRole:performsAgentRole 
           objects: 
