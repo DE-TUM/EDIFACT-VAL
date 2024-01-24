@@ -36,7 +36,7 @@
     a sh:NodeShape;
     sh:targetClass edifact-o:InvoiceDetails;
     sh:property [
-        sh:path edifact-o:documentType;
+        sh:path edifact-o:hasDocumentType;
         sh:datatype xsd:string;
         sh:minCount 1;
         sh:maxCount 1;
@@ -50,7 +50,7 @@
     a sh:NodeShape;
     sh:targetClass edifact-o:InvoiceDetails;
     sh:property [
-        sh:path edifact-o:documentNumber;
+        sh:path edifact-o:hasDocumentNumber;
         sh:datatype xsd:string;
         sh:minCount 1;
         sh:maxCount 1;
@@ -62,7 +62,7 @@
     a sh:NodeShape;
     sh:targetClass edifact-o:InvoiceDetails;
     sh:property [
-        sh:path edifact-o:documentNumber;
+        sh:path edifact-o:hasDocumentNumber;
         sh:datatype xsd:string;
         sh:maxLength 12;
         sh:message "The data element 1004 in the BGM segment is too long";
@@ -73,7 +73,7 @@
     a sh:NodeShape;
     sh:targetClass edifact-o:InvoiceDetails;
     sh:property [
-        sh:path edifact-o:documentFunction;
+        sh:path edifact-o:hasDocumentFunction;
         sh:datatype xsd:string;
         sh:minCount 1;
         sh:maxCount 1;
@@ -248,7 +248,7 @@
 
 :ExistenzKaeufer
     a sh:NodeShape ;
-    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:targetClass edifact-o:E-Invoice;
     sh:property [
         sh:path p2p-o-inv:hasBuyer ;
         sh:minCount 1 ;
@@ -266,8 +266,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -288,8 +288,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -311,8 +311,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -335,8 +335,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -359,8 +359,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -382,8 +382,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -406,8 +406,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Kaeufer" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/BuyerRole" ;
             ] 
         ]
         [
@@ -423,7 +423,7 @@
 
 :ExistenzLieferant
     a sh:NodeShape ;
-    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:targetClass edifact-o:E-Invoice;
     sh:property [
         sh:path p2p-o-inv:hasSupplier ;
         sh:minCount 1 ;
@@ -441,8 +441,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -463,8 +463,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -486,8 +486,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -510,8 +510,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -534,8 +534,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -557,8 +557,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -581,8 +581,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferant" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/SupplierRole" ;
             ] 
         ]
         [
@@ -597,7 +597,7 @@
 
 :ExistenzRechnungsempfaenger
     a sh:NodeShape ;
-    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:targetClass edifact-o:E-Invoice;
     sh:property [
         sh:path edifact-o:hasInvoicee ;
         sh:minCount 1 ;
@@ -616,8 +616,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -638,8 +638,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -661,8 +661,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -685,8 +685,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -709,8 +709,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -732,8 +732,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -756,8 +756,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Rechnungsempfaenger" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/InvoiceeRole" ;
             ] 
         ]
         [
@@ -773,7 +773,7 @@
 
 :ExistenzLieferanschrift
     a sh:NodeShape ;
-    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:targetClass edifact-o:E-Invoice;
     sh:property [
         sh:path edifact-o:hasDeliveryParty ;
         sh:minCount 1 ;
@@ -792,8 +792,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -814,8 +814,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -837,8 +837,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -861,8 +861,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -885,8 +885,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -908,8 +908,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -932,8 +932,8 @@
             sh:not 
             [
 		        a sh:PropertyShape ;
-		        sh:path edifact-o:hasFunctionInInvoice ;
-		        sh:hasValue "Lieferanschrift" ;
+		        sh:path rdf:type ;
+		        sh:hasValue "http://example.com/DeliveryPartyRole" ;
             ] 
         ]
         [
@@ -962,7 +962,7 @@
 
 :EANAtrikelnummer
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:message "The LIN segment with the value EN in data element 7143 is missing, i.e. the specification of the EAN article number or the PIA segment with the value SA in data element 7143 is missing, i.e. the specification of the supplier's article number.";
     sh:or (
         [ 
@@ -982,7 +982,7 @@
 
 :BerechneteMenge
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property[
         sh:path edifact-o:deliveredQuantity;
         sh:datatype xsd:float;
@@ -996,7 +996,7 @@
 
 :BerechneteMenge
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property[
         sh:path p2p-o-doc-line:invoicedQuantity;
         sh:datatype xsd:float;
@@ -1009,7 +1009,7 @@
 
 :BerechneteMenge
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property[
         sh:path edifact-o:hasLineItemAmount;
         sh:datatype xsd:float;
@@ -1022,7 +1022,7 @@
 
 :ArtikelNettopreis
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property[
         sh:path edifact-o:hasNetpriceOfItem;
         sh:datatype xsd:float;
@@ -1035,7 +1035,7 @@
 
 :ArtikelBruttopreis
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property[
         sh:path edifact-o:hasGrosspriceOfItem;
         sh:datatype xsd:float;
@@ -1057,7 +1057,7 @@
 
 :ExistenzAuftragsnummerLieferantArtikel
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:orderNumberSupplier;
         sh:datatype xsd:string;
@@ -1069,7 +1069,7 @@
 
 :LaengeAuftragsnummerLieferantArtikel
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:orderNumberSupplier;
         sh:datatype xsd:string;
@@ -1080,7 +1080,7 @@
 
 :ExistenzDatumAuftragsnummerLieferantArtikel
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:dateOrderNumberSupplier;
         sh:datatype xsd:string;
@@ -1092,7 +1092,7 @@
 
 :LaengeDatumAuftragsnummerLieferantArtikel
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:dateOrderNumberSupplier;
         sh:datatype xsd:string;
@@ -1104,7 +1104,7 @@
 
 :ExistenzAuftragsnummerKaeuferArtikel
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:orderNumberBuyer;
         sh:datatype xsd:string;
@@ -1116,7 +1116,7 @@
 
 :LaengeAuftragsnummerKaeuferArtikel 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:orderNumberBuyer;
         sh:datatype xsd:string;
@@ -1128,7 +1128,7 @@
 
 :ExistenzDatumAuftragsnummerKaeuferArtikel 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:dateOrderNumberBuyer;
         sh:datatype xsd:string;
@@ -1140,7 +1140,7 @@
 
 :LaengeDatumAuftragsnummerKaeuferArtikel 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path edifact-o:dateOrderNumberBuyer;
         sh:datatype xsd:string;
@@ -1236,9 +1236,21 @@
 
 :Abschlag 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
-        sh:path edifact-o:discountReason;
+        sh:path edifact-o:hasAllowanceReason;
+        sh:datatype xsd:string;
+        sh:minLength 1;
+        sh:maxCount 15;
+        sh:message "The data element 7160 or 7161 is missing in the ALC segment, i.e. the tee type specification.";
+    ]
+.
+
+:Rabatt 
+    a sh:NodeShape;
+    sh:targetClass edifact-o:item;
+    sh:property [
+        sh:path edifact-o:hasDiscountReason;
         sh:datatype xsd:string;
         sh:minLength 1;
         sh:maxCount 15;
@@ -1248,9 +1260,9 @@
 
 :Zuschlag 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
-        sh:path edifact-o:allowanceReason;
+        sh:path edifact-o:hasChargeReason;
         sh:datatype xsd:string;
         sh:minLength 1;
         sh:maxCount 15;
@@ -1260,9 +1272,22 @@
 
 :AbschlagProzentsatz 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
-        sh:path edifact-o:discountPercentage;
+        sh:path edifact-o:hasAllowancePercentage;
+        sh:datatype xsd:float;
+        sh:minLength 1;
+        sh:maxLength 5;
+        sh:maxCount 15;
+        sh:message "The data element 5245 or 5482 is missing in the PCD segment, i.e. the percentage type and amount of the discount.";
+    ]
+.
+
+:RabattProzentsatz 
+    a sh:NodeShape;
+    sh:targetClass edifact-o:item;
+    sh:property [
+        sh:path edifact-o:hasDiscountPercentage;
         sh:datatype xsd:float;
         sh:minLength 1;
         sh:maxLength 5;
@@ -1273,9 +1298,9 @@
 
 :ZuschlagProzentsatz 
     a sh:NodeShape;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
-        sh:path edifact-o:allowancePercentage;
+        sh:path edifact-o:hasChargePercentage;
         sh:datatype xsd:float;
         sh:minLength 1;
         sh:maxLength 5;
@@ -1286,7 +1311,7 @@
 
 :BruttoendbetragRechnunng 
     a sh:NodeShape;
-    sh:targetClass  p2p-o-item:item;
+    sh:targetClass  edifact-o:item;
     sh:message "The segment MOA+8, MOA+23 or MOA+204 is incorrect, i.e. the indication of the gross final amount of the invoice.";
     sh:or(
         [
@@ -1304,7 +1329,7 @@
 
 :SteuerangabenItem
     a sh:NodeShape;
-    sh:targetClass  p2p-o-item:item;
+    sh:targetClass  edifact-o:item;
     sh:property [
         sh:path edifact-o:hasVATrate ;
         sh:maxCount 5;
@@ -1315,7 +1340,7 @@
 
 :Produktidentifikation
     a sh:NodeShape ;
-    sh:targetClass p2p-o-item:item;
+    sh:targetClass edifact-o:item;
     sh:property [
         sh:path p2p-o-item:itemName ;
         sh:datatype xsd:string ;
@@ -1326,7 +1351,7 @@
 
 :Steuerbetrag    
     a sh:NodeShape;
-    sh:targetClass  p2p-o-item:item;
+    sh:targetClass  edifact-o:item;
     sh:property [
         sh:path edifact-o:hasTaxAmount ;
         sh:maxCount 1;
@@ -1338,7 +1363,7 @@
 
 :ZuAbschlagbetrag
     a sh:NodeShape;
-    sh:targetClass  p2p-o-item:item;
+    sh:targetClass  edifact-o:item;
     sh:message "The segment MOA+23 or MOA+204 is incorrect, i.e. the specification of the surcharge or discount amount is incorrect.";
     sh:or(
         [
@@ -1359,7 +1384,7 @@
 
 :BasisZuAbschlagbetrag    
     a sh:NodeShape;
-    sh:targetClass  p2p-o-item:item;
+    sh:targetClass  edifact-o:item;
     sh:property [
         sh:path edifact-o:hasAdditionDeductionBasis ;
         sh:maxCount 1;
@@ -1392,7 +1417,7 @@
 
 :Prozesszugehoerigkeit 
     a sh:NodeShape ;
-    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:targetClass edifact-o:E-Invoice;
     sh:property [
         sh:path edifact-o:belongsToProcess ;
         sh:minCount 1 ;
@@ -1400,3 +1425,26 @@
         sh:hasValue "ProcessExample"
     ]
 .
+
+:SumNetPrice a sh:NodeShape ;
+    sh:targetClass edifact-o:InvoiceDetails ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "edifact-o:hasTotalLineItemAmount must equal the sum of all values of edifact-o:hasLineItemAmount";
+        sh:prefixes [ sh:declare [
+                sh:prefix "edifact-o" ;
+                sh:namespace "https://purl.org/edifact/ontology#"^^xsd:anyURI ; ] ] ;
+        sh:select
+        """SELECT $this (edifact-o:hasTotalLineItemAmount AS ?path) (?totalAmount AS ?value)
+            WHERE { 
+                $this a edifact-o:InvoiceDetails ;
+                    edifact-o:hasTotalLineItemAmount ?totalAmount .
+                    {select $this (sum(?itemAmount) as ?sum) {
+                        ?item edifact-o:isItemOf ?invoice ; edifact-o:hasLineItemAmount ?itemAmount.
+                        ?invoice edifact-o:hasInvoiceDetails $this.
+                        } 
+                        group by $this }
+
+                FILTER (?sum != ?totalAmount) 
+                }""" ; 
+            ] .
