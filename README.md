@@ -4,40 +4,45 @@ EDIFACT-VAL is an automatic tool to validate the content of EDIFACT messages usi
 
 ## Overview 
 
-The EIDFACT-VAL tool contains the following programs: 
+The EIDFACT-VAL tool contains the following steps: 
 
-1: Pre-Processing:
-  - Python Programm for extension of the XML files
+1: Invoice Pre-Processing:
+  - Translation of the invoices into XML files
 
-2: RDF Graph Creation for Invoices: 
+2: RDF Graph Creation of Invoices: 
   - YARRRML Mapping 
   - RML Mapping
 
 3: RDF Validation:  
-  - SHACL constraints for exemplary business processes 
+  - Constraints based on EDIFACT guidelines and reports based on domain experts  
 
-All these steps are combined into one Python program called [EDIFACT-Val](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/40dfb22ac88682f0c76911820500c8c304b43c0b/EDIFACT-Val.py).
+All these steps are combined into one Python program called [EDIFACT-Val](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/80c39b8e2d579a63a7ee9213840585c6fad5d32c/src/EDIFACT-Val.py).
 
 An overview of the EDIFACT Val tool can be seen here: 
-![alt text](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/50bf72c91baedcef7736ddc71d5e5305335ee732/EDIFACT-VAL%20Overview%20.png)
+![alt text](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/80c39b8e2d579a63a7ee9213840585c6fad5d32c/docs/EDIFACT-VAL%20Overview%20.png)
 
 ## Preparations
 
 - Download or clone this repository.
-- Install the Python libraries:
-  - ```xml.etree.ElementTree```
-  - ```os```
-  - ```pyshacl```
-  - ```subprocess```
+- Install Python3; this code was tested with Python 3.12.1
+- Install the required  packages with the following command:
+   ```
+  pip install -r requirements.txt
+  ````
   
 - Install [RMLmapper](https://github.com/RMLio/rmlmapper-java)
   - download and include the newest .jar file in the same folder as the other files 
 - Install [yarrrml-parser](https://github.com/RMLio/yarrrml-parser)
-  - ```npm i -g @rmlio/yarrrml-parser```
+  ```
+  npm i -g @rmlio/yarrrml-parser
+  ```
 
 
-## Useage
+## Usage
 
+Locate the Files from the Example folder in the src folder. 
+
+Executing the program EDIFACT-Val.py:
 ```
-python3 EDIFACT-Val.py
+python EDIFACT-Val.py
 ```
