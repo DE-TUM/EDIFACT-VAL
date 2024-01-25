@@ -21,7 +21,7 @@ All these steps are combined into one Python program called EDIFACT-Val.
 The repository contains a version for [macOS](https://github.com/johannesmaekelburg/EDIFACT-VAL/tree/3b0a8c3a2bdfd063d890a581d9456b5a61649a61/macOS) and a version for [Windows](https://github.com/johannesmaekelburg/EDIFACT-VAL/tree/3b0a8c3a2bdfd063d890a581d9456b5a61649a61/Windows). 
 
 An overview of the EDIFACT Val tool can be seen here: 
-![alt text](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/913b1bc12774e8f3c58c2ceca84b50f8093ec4bd/EDIFACT-VAL%20Overview%20.png)
+![alt text](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/50bf72c91baedcef7736ddc71d5e5305335ee732/EDIFACT-VAL%20Overview%20.png)
 
 ## Preparations
 
