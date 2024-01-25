@@ -38,7 +38,7 @@
         sh:datatype xsd:string;
         sh:minCount 1;
         sh:maxCount 1;
-        sh:in ("Handelsrechnung" "Gutschriftsanzeige" "Wertgutschrift" "Wertbelastung");
+        sh:in ("Commercial invoice" "Credit advice" "Value credit" "Value debit" "Handelsrechnung" "Gutschriftsanzeige" "Wertgutschrift" "Wertbelastung");
         sh:message "Data element 1001 is missing in the BGM segment";
     ]
 .
@@ -75,7 +75,7 @@
         sh:datatype xsd:string;
         sh:minCount 1;
         sh:maxCount 1;
-        sh:in ("Stornierung" "Ersatz" "Duplikat" "Original" "Kopie" "Zusaetzliche Uebertragung");
+        sh:in ("Cancellation" "Replacement" "Duplicate" "Original" "Copy" "Additional transfer" "Stornierung" "Ersatz" "Duplikat" "Original" "Kopie" "Zusaetzliche Uebertragung");
         sh:message "Data element 1225 is missing in the BGM segment, i.e. the specification of the document function";
     ]
 .
@@ -1214,7 +1214,7 @@
         sh:path edifact-o:paymentCondition;
         sh:datatype xsd:string;
         sh:maxCount 5;
-        sh:in ("Wie ueblich" "Verlaengert");
+        sh:in ("As usual" "Extended" "Wie ueblich" "Verlaengert");
         sh:message "The specified payment term is not one of the expected values, i.e. data element 4279 in the PAT segment is not equal to 1 or 7.";
     ]
 .
