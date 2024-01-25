@@ -16,9 +16,7 @@ The EIDFACT-VAL tool contains the following programs:
 3: RDF Validation:  
   - SHACL constraints for exemplary business processes 
 
-All these steps are combined into one Python program called EDIFACT-Val.
-
-The repository contains a version for [macOS](https://github.com/johannesmaekelburg/EDIFACT-VAL/tree/3b0a8c3a2bdfd063d890a581d9456b5a61649a61/macOS) and a version for [Windows](https://github.com/johannesmaekelburg/EDIFACT-VAL/tree/3b0a8c3a2bdfd063d890a581d9456b5a61649a61/Windows). 
+All these steps are combined into one Python program called [EDIFACT-Val](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/40dfb22ac88682f0c76911820500c8c304b43c0b/EDIFACT-Val.py).
 
 An overview of the EDIFACT Val tool can be seen here: 
 ![alt text](https://github.com/johannesmaekelburg/EDIFACT-VAL/blob/50bf72c91baedcef7736ddc71d5e5305335ee732/EDIFACT-VAL%20Overview%20.png)
