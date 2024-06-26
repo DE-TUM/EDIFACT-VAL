@@ -1348,6 +1348,10 @@ mappings:
         - predicates: frapo:hasDispatchDate
           objects: 
               - value: "$(./Versanddatum)"
+        - predicates: edifact-o:hasDueDate
+          objects:
+            -value: "$(./Zahlungsfaelligkeitsdatum)"
+            -datatype: xsd:string
         - predicates: edifact-o:hasTermsDiscountDueDate
           objects: 
               - value: "$(./Faelligkeitsdatum_bei_Skontoabzug)"
@@ -2059,6 +2063,10 @@ mappings:
         - predicates: edifact-o:valutaDate 
           objects: 
               - value: "$(./ValutaDatum)"
+        - predicates: edifact-o:hasDueDate
+          objects:
+            -value: "$(./Zahlungsfaelligkeitsdatum)"
+            -datatype: xsd:string
         - predicates: edifact-o:calculationPeriod
           objects: 
               - value: "$(./Abechnungszeitraum)"
