@@ -1316,8 +1316,8 @@ mappings:
               type: iri 
         - predicates: p2p-o-org:globalLocationNumber
           objects: 
-            value: "$(./D_3039)"
-            datatype: xsd:integer
+              value: "$(./D_3039)"
+              datatype: xsd:integer
         - predicates: schema:currency
           objects: 
               - value: "$(./Waehrung)"
@@ -1350,8 +1350,8 @@ mappings:
               - value: "$(./Versanddatum)"
         - predicates: edifact-o:hasDueDate
           objects:
-            -value: "$(./Zahlungsfaelligkeitsdatum)"
-            -datatype: xsd:string
+              value: "$(./Zahlungsfaelligkeitsdatum)"
+              datatype: xsd:string
         - predicates: edifact-o:hasTermsDiscountDueDate
           objects: 
               - value: "$(./Faelligkeitsdatum_bei_Skontoabzug)"
@@ -2065,8 +2065,8 @@ mappings:
               - value: "$(./ValutaDatum)"
         - predicates: edifact-o:hasDueDate
           objects:
-            -value: "$(./Zahlungsfaelligkeitsdatum)"
-            -datatype: xsd:string
+              value: "$(./Zahlungsfaelligkeitsdatum)"
+              datatype: xsd:string
         - predicates: edifact-o:calculationPeriod
           objects: 
               - value: "$(./Abechnungszeitraum)"
