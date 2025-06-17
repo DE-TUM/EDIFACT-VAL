@@ -7,7 +7,7 @@ EDIFACT-VAL is an automatic tool to validate the content of EDIFACT messages usi
 The EIDFACT-VAL tool contains the following steps: 
 
 1: Invoice Pre-Processing:
-  - Translation of the invoices into XML files
+  - Translation of the edifact invoices into XML files
 
 2: RDF Graph Creation of Invoices: 
   - YARRRML Mapping 
@@ -40,10 +40,10 @@ An overview of the EDIFACT Val tool can be seen here:
 
 ## Usage
 
-Locate the Files from the Example folder in the src folder. 
+Locate the Files from the **example** folder in the **src2** folder. 
 
-Executing the program EDIFACT-Val.py:
+Executing the program edifact-val.py:
 ```
-python EDIFACT-Val.py
+python edifact-val.py
 ```
 
