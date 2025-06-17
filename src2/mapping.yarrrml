@@ -1,0 +1,1688 @@
+prefixes:
+ dc: http://purl.org/dc/elements/1.1# 
+ edifact-o: https://purl.org/edifact/ontology#
+ frapo: http://purl.org/cerif/frapo/
+ org: http://www.w3.org/ns/org# 
+ p2p-o: https://purl.org/p2p-o#
+ p2p-o-doc: https://purl.org/p2p-o/document#
+ p2p-o-doc-line: https://purl.org/p2p-o/documentline#
+ p2p-o-inv: https://purl.org/p2p-o/invoice#
+ p2p-o-item: https://purl.org/p2p-o/item#
+ p2p-o-org: https://purl.org/p2p-o/organization#
+ schema: http://schema.org/ 
+ vcard: http://www.w3.org/2006/vcard/ns# 
+ agentRole: https://archive.org/services/purl/domain/modular_ontology_design_library/agentrole# 
+
+
+
+sources:
+    test-source0:
+      access: "enriched_output.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange"
+    test-source1:
+      access: "enriched_output.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message"
+    test-source2:
+      access: "enriched_output.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/LineItem"
+    test-source3:
+      access: "enriched_output.xml"
+      referenceFormulation: xpath
+      iterator: "/Interchange/Message/Party"
+mappings:
+    eancomStructure:
+      sources: 
+          - test-source0
+      subjects:
+        - value: http://example.com/$(./@eancomstructure)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: edifact-o:EANCOM-Structure
+              type: iri
+        - predicates: edifact-o:synatxIdentifier
+          objects: 
+              value: "$(./synatxIdentifier)"
+        - predicates: edifact-o:synatxVersion
+          objects: 
+              value: "$(./synatxVersion)"
+              datatype: xsd:integer
+        - predicates: edifact-o:senderIndicator
+          objects: 
+              value: "$(./senderIndicator)"
+        - predicates: edifact-o:recipientIndicator 
+          objects: 
+              value: "$(./recipientIndicator)"
+        - predicates: edifact-o:creationDate
+          objects: 
+              value: "$(./creationDate)"
+              datatype: xsd:integer
+        - predicates: edifact-o:creationTime
+          objects: 
+              value: "$(./creationTime)"
+              datatype: xsd:integer
+        - predicates: edifact-o:dataExchangeReference
+          objects: 
+              value: "$(./dataExchangeReference)"
+              datatype: xsd:string
+        - predicates: edifact-o:totalNumberOfSegments
+          objects: 
+              value: "$(./totalNumberOfSegments)"
+              datatype: xsd:string
+        - predicates: edifact-o:controlSegmentBetweenItemAndTotalPart
+          objects: 
+              value: "$(./controlSegmentBetweenItemAndTotalPart)"
+              datatype: xsd:string
+        - predicates: edifact-o:messageReferenceNumber
+          objects: 
+              value: "$(./messageReferenceNumber)"
+              datatype: xsd:string
+        - predicates: edifact-o:messageTypeIdentifier
+          objects: 
+              value: "$(./messageTypeIdentifier)"
+              datatype: xsd:string
+        - predicates: edifact-o:versionNumberMessageType
+          objects: 
+              value: "$(./versionNumberMessageType)"
+              datatype: xsd:string
+        - predicates: edifact-o:releaseNumberMessageType
+          objects: 
+              value: "$(./releaseNumberMessageType)"
+              datatype: xsd:string
+        - predicates: edifact-o:managingOrganisations
+          objects: 
+              value: "$(./managingOrganisations)"
+              datatype: xsd:string
+        - predicates: edifact-o:dataExchangeCounter
+          objects: 
+              value: "$(./dataExchangeCounter)"
+              datatype: xsd:integer
+    mainInvoice:
+      sources: 
+        - test-source1
+        - test-source2
+      subjects:
+        - value: http://example.com/$(./@details)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: edifact-o:E-Invoice
+              type: iri
+        - predicates: edifact-o:followsStandard
+          objects: 
+            value: http://example.com/$(./@eancomstructure)
+            type: iri
+        - predicates: edifact-o:belongsToProcess
+          objects: 
+              - value: "$(./ProcessIdentification)"
+        - predicates: edifact-o:hasItem
+          objects: 
+            value: http://example.com/$(./@nid)
+            type: iri
+        - predicates: edifact-o:hasInvoiceDetails
+          objects: 
+            value: http://example.com/$(./@mid)
+            type: iri
+        - predicates: edifact-o:hasBuyerAgent
+          objects: 
+              value: http://example.com/$(./@SalesAgentRole)
+              type: iri
+        - predicates: edifact-o:hasBrokerOrSalesOffice
+          objects: 
+              value: http://example.com/$(./@BrokerOrSalesOfficeRole)
+              type: iri
+        - predicates: edifact-o:calculateAndDeliverTo
+          objects: 
+              value: http://example.com/$(./@CalculateAndDeliverToRole)
+              type: iri
+        - predicates: p2p-o-inv:hasBuyer
+          objects: 
+              value: http://example.com/$(./@BuyerRole)
+              type: iri
+        - predicates: edifact-o:hasRecipient
+          objects: 
+              value: http://example.com/$(./@RecipientRole)
+              type: iri
+        - predicates: edifact-o:hasCentralRegulator
+          objects: 
+              value: http://example.com/$(./@Zentralregulierer_EAN_CodeRole)
+              type: iri
+        - predicates: edifact-o:hasDeliveryParty
+          objects: 
+              value: http://example.com/$(./@DeliveryPartyRole)
+              type: iri
+        - predicates: edifact-o:hasInvoicingParty
+          objects: 
+              value: http://example.com/$(./@InvoicingPartyRole)
+              type: iri
+        - predicates: edifact-o:hasInvoicee
+          objects: 
+              value: http://example.com/$(./@InvoiceeRole)
+              type: iri
+        - predicates: p2p-o-inv:hasPayee
+          objects: 
+              value: http://example.com/$(./@PayeeRole)
+              type: iri
+        - predicates: edifact-o:hasDespatchParty
+          objects: 
+              value: http://example.com/$(./@DespatchPartyRole)
+              type: iri
+        - predicates: edifact-o:hasRecipientOfInvoiceRegulation
+          objects: 
+              value: http://example.com/$(./@RecipientOfInvoiceRegulationRole)
+              type: iri
+        - predicates: edifact-o:hasRegulator
+          objects: 
+              value: http://example.com/$(./@RegulatorRole)
+              type: iri
+        - predicates: edifact-o:hasSuppliersCompanyHeadquarter
+          objects: 
+              value: http://example.com/$(./@SuppliersCompanyHeadquarterRole)
+              type: iri
+        - predicates: p2p-o-inv:hasSeller
+          objects: 
+              value: http://example.com/$(./@SellerRole)
+              type: iri
+        - predicates: edifact-o:hasWarehouseNumber
+          objects: 
+              value: http://example.com/$(./@WarehouseNumberRole)
+              type: iri
+        - predicates: edifact-o:hasRepresentativeOrAgentOfSupplier
+          objects: 
+              value: http://example.com/$(./@RepresentativeOrAgentOfSupplierRole)
+              type: iri
+        - predicates: edifact-o:isSendTo
+          objects: 
+              value: http://example.com/$(./@SendToRole)
+              type: iri
+        - predicates: p2p-o-inv:hasSupplier
+          objects: 
+              value: http://example.com/$(./@SupplierRole)
+              type: iri
+        - predicates: edifact-o:hasWholesaler
+          objects: 
+              value: http://example.com/$(./@WholesalerRole)
+              type: iri
+        - predicates: edifact-o:hasFinalConsignee
+          objects: 
+              value: http://example.com/$(./@FinalConsigneeRole)
+              type: iri
+        - predicates: edifact-o:hasReceivingCreditInstitution
+          objects: 
+              value: http://example.com/$(./@Empfangendes_Kreditinstitut)
+              type: iri
+        - predicates: edifact-o:hasPayingCreditInsitute
+          objects: 
+              value: http://example.com/$(./@Zahlendes_Kreditinstitut)
+              type: iri
+    InvoiceDetails:
+      sources: 
+          - test-source1
+          - test-source2
+      subjects:
+        - value: http://example.com/$(./@mid)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: edifact-o:InvoiceDetails
+              type: iri 
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+              value: "$(./D_3039)"
+              datatype: xsd:integer
+        - predicates: schema:currency
+          objects: 
+              - value: "$(./Waehrung)"
+        - predicates: edifact-o:invoiceCurrency
+          objects: 
+              - value: "$(./WaehrungRechnung)"
+        - predicates: edifact-o:orderCurrency
+          objects: 
+              - value: "$(./WaehrungBestellung)"
+        - predicates: edifact-o:priceCurrency
+          objects: 
+              - value: "$(./WaehrungPreisangabe)"
+        - predicates: edifact-o:paymentCurrency
+          objects: 
+              - value: "$(./WaehrungZahlung)"
+        - predicates: edifact-o:hasRequiredDeliveryDate
+          objects: 
+              - value: "$(./DTM_2)"
+        - predicates: frapo:hasInvoiceDate
+          objects: 
+              - value: "$(./DTM_3)"
+        - predicates: frapo:PurchaseDate
+          objects: 
+              - value: "$(./DTM_4)"
+        - predicates: edifact-o:effectiveDate
+          objects: 
+              - value: "$(./DTM_7)"
+        - predicates: frapo:hasDispatchDate
+          objects: 
+              - value: "$(./DTM_11)"
+        - predicates: edifact-o:hasDueDate
+          objects:
+              value: "$(./DTM_140)"
+              datatype: xsd:string
+        - predicates: edifact-o:hasTermsDiscountDueDate
+          objects: 
+              - value: "$(./DTM_12)"
+        - predicates: edifact-o:hasTermsNetDueDate
+          objects: 
+              - value: "$(./DTM_13)"
+        - predicates: p2p-o-inv:actualDeliveryDate
+          objects: 
+              - value: "$(./DTM_35)"
+        - predicates: edifact-o:receiptGoodsDate
+          objects: 
+              - value: "$(./DTM_50)"
+        - predicates: edifact-o:exhangeRateDate
+          objects: 
+              - value: "$(./DTM_134)"
+        - predicates: edifact-o:documentDate
+          objects: 
+              - value: "$(./DTM_137)"
+        - predicates: edifact-o:referenceDate
+          objects: 
+              - value: "$(./DTM_171)"
+        - predicates: edifact-o:valutaDate 
+          objects: 
+              - value: "$(./DTM_209)"
+        - predicates: edifact-o:calculationPeriod
+          objects: 
+              - value: "$(./DTM_263)"
+        - predicates: edifact-o:taxPeriod
+          objects: 
+              - value: "$(./DTM_325)"
+        - predicates: edifact-o:loadPeriod
+          objects: 
+              - value: "$(./DTM_326)"
+        - predicates: edifact-o:discountTerminationDate
+          objects: 
+              - value: "$(./DTM_343)"
+        - predicates: edifact-o:hasDocumentNumber
+          objects: 
+              - value: "$(./Dokumentennummer)"
+        - predicates: edifact-o:hasDocumentType
+          objects: 
+              - value: "$(./Dokumentenart)"
+        - predicates: edifact-o:hasDocumentFunction
+          objects: 
+              - value: "$(./Dokumentenfunktion)"
+        - predicates: edifact-o:hasInvoiceAmount
+          objects: 
+              value: "$(./MOA_77)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalLineItemAmount
+          objects: 
+              value: "$(./MOA_79)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxableAmount
+          objects: 
+              value: "$(./MOA_125)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalDutyTaxFeeAmount
+          objects: 
+              value: "$(./MOA_176)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmount
+          objects: 
+              value: "$(./MOA_128)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasUnitPrice
+          objects: 
+              value: "$(./MOA_146)"
+              datatype: xsd:float 
+        - predicates: edifact-o:hasVATamount
+          objects: 
+              value: "$(./MOA_150)"
+              datatype: xsd:float 
+        - predicates: edifact-o:hasVATfirstValue
+          objects: 
+              value: "$(./MOA_1)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxAmount
+          objects: 
+              value: "$(./MOA_124)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAmount
+          objects: 
+              value: "$(./MOA_204)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowanceAmount
+          objects: 
+              value: "$(./MOA_23)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountDueOrPayable
+          objects: 
+              value: "$(./MOA_9)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasRemittedtAmount
+          objects: 
+              value: "$(./MOA_12)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasCashDiscount
+          objects: 
+              value: "$(./MOA_21)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAllowanceBasis
+          objects: 
+              value: "$(./MOA_25)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountAmount
+          objects: 
+              value: "$(./MOA_52)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDueDeductionAmount
+          objects: 
+              value: "$(./MOA_53)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasBasicTaxAmount
+          objects: 
+              value: "$(./MOA_56)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasFreightCharge
+          objects: 
+              value: "$(./MOA_64)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalGoodsPosition
+          objects: 
+              value: "$(./MOA_66)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasOriginalAmount
+          objects: 
+              value: "$(./MOA_98)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPaymentDiscountAmount
+          objects: 
+              value: "$(./MOA_109)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountMessage
+          objects: 
+              value: "$(./MOA_86)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountUnderPaymentReduction
+          objects: 
+              value: "$(./MOA_129)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPrepaidAmount
+          objects: 
+              value: "$(./MOA_113)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAdditionsAndDeductions
+          objects: 
+              value: "$(./MOA_131)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyAmount
+          objects: 
+              value: "$(./MOA_201)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountUnderPriceAdjustment
+          objects: 
+              value: "$(./MOA_236)"
+              datatype: xsd:float
+        - predicates: edifact-o:proformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_AAB)"
+        - predicates: edifact-o:dateProformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_AAB_Date)"
+        - predicates: edifact-o:orderNumberDelivery
+          objects: 
+              - value: "$(./Referenz_AAJ)"
+        - predicates: edifact-o:dateOrderNumberDelivery
+          objects: 
+              - value: "$(./Referenz_AAJ_Date)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./FTX_AAK)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./Referenz_AAK)"
+        - predicates: edifact-o:dateDespatchAdviceNumber
+          objects: 
+              - value: "$(./Referenz_AAK_Date)"
+        - predicates: edifact-o:offerNumber
+          objects: 
+              - value: "$(./Referenz_AAG)"
+        - predicates: edifact-o:dateOfferNumber
+          objects: 
+              - value: "$(./Referenz_AAG_Date)"
+        - predicates: edifact-o:customsTariffNumber
+          objects: 
+              - value: "$(./Referenz_ABD)"
+        - predicates: edifact-o:dateCustomsTariffNumber
+          objects: 
+              - value: "$(./Referenz_ABD_Date)"
+        - predicates: edifact-o:originatorReference
+          objects: 
+              - value: "$(./Referenz_ABO)"
+        - predicates: edifact-o:dateOriginatorReference
+          objects: 
+              - value: "$(./Referenz_ABO_Date)"
+        - predicates: edifact-o:relatedDocumentNumber
+          objects: 
+              - value: "$(./Referenz_ACE)"
+        - predicates: edifact-o:accountsReceivableNumber
+          objects: 
+              - value: "$(./Referenz_AP)"
+        - predicates: edifact-o:dateAccountsReceivableNumber
+          objects: 
+              - value: "$(./Referenz_AP_Date)"
+        - predicates: edifact-o:beneficiaryReference
+          objects: 
+              - value: "$(./Referenz_AFO)"
+        - predicates: edifact-o:dateBeneficiaryReference
+          objects: 
+              - value: "$(./Referenz_AFO_Date)"
+        - predicates: edifact-o:numberOfBundleMessages
+          objects: 
+              - value: "$(./Referenz_ALL)"
+        - predicates: edifact-o:dateNumberOfBundleMessages
+          objects: 
+              - value: "$(./Referenz_ALL_Date)"
+        - predicates: edifact-o:receivingAdviceNumber
+          objects: 
+              - value: "$(./Referenz_ALO)"
+        - predicates: edifact-o:dateReceivingAdviceNumber
+          objects: 
+              - value: "$(./Referenz_ALO_Date)"
+        - predicates: edifact-o:additionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenz_API)"
+        - predicates: edifact-o:dateAdditionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenz_API_Date)"
+        - predicates: edifact-o:contractNumberBuyer
+          objects: 
+              - value: "$(./Referenz_BC)"
+        - predicates: edifact-o:dateContractNumberBuyer
+          objects: 
+              - value: "$(./Referenz_BC_Date)"
+        - predicates: edifact-o:numberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenz_CIN)"
+        - predicates: edifact-o:dateNumberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenz_CIN_Date)"
+        - predicates: edifact-o:creditNoteNumber
+          objects: 
+              - value: "$(./Referenz_CD)"
+        - predicates: edifact-o:dateCreditNoteNumber
+          objects: 
+              - value: "$(./Referenz_CD_Date)"
+        - predicates: edifact-o:referenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenz_COE)"
+        - predicates: edifact-o:dateReferenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenz_COE_Date)"
+        - predicates: edifact-o:referenceNumberCustomer
+          objects: 
+              - value: "$(./Referenz_CR)"
+        - predicates: edifact-o:dateReferenceNumberCustomer
+          objects: 
+              - value: "$(./Referenz_CR_Date)"
+        - predicates: edifact-o:contractNumber
+          objects: 
+              - value: "$(./Referenz_CT)"
+        - predicates: edifact-o:dateContractNumber
+          objects: 
+              - value: "$(./Referenz_CT_Date)"
+        - predicates: edifact-o:debitNoteNumber
+          objects: 
+              - value: "$(./Referenz_DL)"
+        - predicates: edifact-o:dateDebitNoteNumber
+          objects: 
+              - value: "$(./Referenz_DL_Date)"
+        - predicates: edifact-o:deliveryNoteNumber
+          objects: 
+              - value: "$(./Referenz_DQ)"
+        - predicates: edifact-o:dateDeliveryNoteNumber
+          objects: 
+              - value: "$(./Referenz_DQ_Date)"
+        - predicates: edifact-o:fiscalNumber
+          objects: 
+              - value: "$(./Referenz_FC)"
+        - predicates: edifact-o:dateFiscalNumber
+          objects: 
+              - value: "$(./Referenz_FC_Date)"
+        - predicates: edifact-o:fileLineIdentifier
+          objects: 
+              - value: "$(./Referenz_FI)"
+        - predicates: edifact-o:dateFileLineIdentifier
+          objects: 
+              - value: "$(./Referenz_FI_Date)"
+        - predicates: edifact-o:governmentReferenceNumber
+          objects: 
+              - value: "$(./Referenz_GN)"
+        - predicates: edifact-o:dateGovernmentReferenceNumber
+          objects: 
+              - value: "$(./Referenz_GN_Date)"
+        - predicates: edifact-o:harmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenz_HS)"
+        - predicates: edifact-o:dateHarmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenz_HS_Date)"
+        - predicates: edifact-o:internalVendorNumber
+          objects: 
+              - value: "$(./Referenz_IA)"
+        - predicates: edifact-o:dateInternalVendorNumber
+          objects: 
+              - value: "$(./Referenz_IA_Date)"
+        - predicates: edifact-o:importLicenseNumber
+          objects: 
+              - value: "$(./Referenz_IP)"
+        - predicates: edifact-o:dateImportLicenseNumber
+          objects: 
+              - value: "$(./Referenz_IP_Date)"
+        - predicates: edifact-o:internalCustomerNumber
+          objects: 
+              - value: "$(./Referenz_IT)"
+        - predicates: edifact-o:dateInternalCustomerNumber
+          objects: 
+              - value: "$(./Referenz_IT_Date)"
+        - predicates: p2p-o-inv:invoiceNumber
+          objects: 
+              - value: "$(./Referenz_IV)"
+        - predicates: edifact-o:dateInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_IV_Date)"
+        - predicates: edifact-o:lineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenz_LI)"
+        - predicates: edifact-o:dateLineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenz_LI_Date)"
+        - predicates: edifact-o:orderNumberBuyer
+          objects: 
+              - value: "$(./Referenz_ON)"
+        - predicates: edifact-o:dateOrderNumberBuyer
+          objects: 
+              - value: "$(./Referenz_ON_Date)"
+        - predicates: edifact-o:priceListNumber
+          objects: 
+              - value: "$(./Referenz_PL)"
+        - predicates: edifact-o:datePriceListNumber
+          objects: 
+              - value: "$(./Referenz_PL_Date)"
+        - predicates: edifact-o:paymentReference
+          objects: 
+              - value: "$(./Referenz_PQ)"
+        - predicates: edifact-o:datePaymentReference
+          objects: 
+              - value: "$(./Referenz_PQ_Date)"
+        - predicates: edifact-o:financialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenz_PY)"
+        - predicates: edifact-o:dateFinancialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenz_PY_Date)"
+        - predicates: edifact-o:exportReferenceNumber
+          objects: 
+              - value: "$(./Referenz_RF)"
+        - predicates: edifact-o:dateExportReferenceNumber
+          objects: 
+              - value: "$(./Referenz_RF_Date)"
+        - predicates: edifact-o:sellersReferenceNumber
+          objects: 
+              - value: "$(./Referenz_SS)"
+        - predicates: edifact-o:dateSellersReferenceNumber
+          objects: 
+              - value: "$(./Referenz_SS_Date)"
+        - predicates: edifact-o:specificationNumber
+          objects: 
+              - value: "$(./Referenz_SZ)"
+        - predicates: edifact-o:dateSpecificationNumber
+          objects: 
+              - value: "$(./Referenz_SZ_Date)"
+        - predicates: edifact-o:orderNumberSupplier
+          objects: 
+              - value: "$(./Referenz_VN)"
+        - predicates: edifact-o:dateOrderNumberSupplier
+          objects: 
+              - value: "$(./Referenz_VN_Date)"
+        - predicates: edifact-o:companyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenz_XA)"
+        - predicates: edifact-o:dateCompanyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenz_XA_Date)"
+        - predicates: edifact-o:paymentCondition
+          objects: 
+              - value: "$(./ZahlungsbedingungsArt)"
+        - predicates: edifact-o:paymentReferenceDate
+          objects: 
+              - value: "$(./ZahlungsbezugsterminTage)"
+        - predicates: edifact-o:hasAllowanceReason
+          objects: 
+              - value: "$(./Abschlag)"
+        - predicates: edifact-o:hasChargeReason
+          objects: 
+              - value: "$(./Zuschlag)"
+        - predicates: edifact-o:noDiscountAllowance
+          objects: 
+              value: "$(./Kein_Abschlag_Zuschlag)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowancePercentage
+          objects: 
+              value: "$(./MOA_23_Prozentsatz)"
+        - predicates: edifact-o:hasAllowancePercentage
+          objects: 
+              value: "$(./AbschlagProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowancePercentagePaymentConditions
+          objects: 
+              value: "$(./AbschlagProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargePercentage
+          objects: 
+              value: "$(./MOA_204_Prozentsatz)"
+        - predicates: edifact-o:hasChargePercentagePaymentConditions
+          objects: 
+              value: "$(./ZuschlagProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountPercentage
+          objects: 
+              value: "$(./AbzugProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountPercentagePaymentConditions
+          objects: 
+              value: "$(./AbzugProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyPercentage
+          objects: 
+              value: "$(./StrafProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyPercentagePaymentConditions
+          objects: 
+              value: "$(./StrafProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoicePercentage
+          objects: 
+              value: "$(./RechnungsProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoicePercentagePaymentConditions
+          objects: 
+              value: "$(./RechnungsProzentsatzZahlungsbedingungen)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasVATrate
+          objects: 
+              value: "$(./TAX_VAT)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGSTrate
+          objects: 
+              value: "$(./TAX_GST)"
+              datatype: xsd:float
+        - predicates: edifact-o:deliveryCondition
+          objects: 
+              - value: "$(./Lieferbedingung)"
+        - predicates: edifact-o:priceAndDeliveryCondition
+          objects: 
+              - value: "$(./PreisUndAuslieferungsbedingung)"
+        - predicates: edifact-o:descriptionOfGoods
+          objects: 
+              - value: "$(./FTX_AAA)"
+        - predicates: edifact-o:generalInformation
+          objects: 
+              - value: "$(./FTX_AAI)"
+        - predicates: edifact-o:changeInformation
+          objects: 
+              - value: "$(./FTX_CHG)"
+        - predicates: edifact-o:instructionForInvoicingParty
+          objects: 
+              - value: "$(./FTX_INV)"
+        - predicates: edifact-o:otherServiceInformation
+          objects: 
+              - value: "$(./FTX_OSI)"
+        - predicates: edifact-o:purchasingInformation
+          objects: 
+              - value: "$(./FTX_PUR)"
+        - predicates: edifact-o:reportingInformation
+          objects: 
+              - value: "$(./FTX_REG)"
+        - predicates: edifact-o:supplierNote
+          objects: 
+              - value: "$(./FTX_SUR)"
+        - predicates: edifact-o:bilateralAgreed
+          objects: 
+              - value: "$(./FTX_ZZZ)"
+    item:
+      sources: 
+          - test-source1
+          - test-source2
+      subjects:
+        - value: http://example.com/$(./@nid)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: p2p-o-item:item
+              type: iri 
+        - predicates: edifact-o:isItemOf 
+          objects: 
+              value: http://example.com/$(./@details)
+              type: iri
+        - predicates: p2p-o-inv:hasInvoiceLine
+          objects: 
+              value: "$(./InvoiceLine)"
+              datatype: xsd:integer
+        - predicates: edifact-o:hasProductIdentification
+          objects: 
+              value: "$(./Produktidentifikation)"
+              datatype: xsd:string
+        - predicates: edifact-o:hasAdditionalProductIdentification
+          objects: 
+              - value: "$(./Zusaetzliche_Produktidentifikation)"
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+              value: "$(./D_3039)"
+              datatype: xsd:integer
+        - predicates: schema:currency
+          objects: 
+              - value: "$(./Waehrung)"
+        - predicates: edifact-o:priceCurrency
+          objects: 
+              - value: "$(./WaehrungPreisangabe)"
+        - predicates: edifact-o:paymentCurrency
+          objects: 
+              - value: "$(./WaehrungZahlung)"
+        - predicates: p2p-o-item:itemName
+          objects: 
+              - value: "$(./Description)"
+        - predicates: edifact-o:discreteQuantity
+          objects: 
+              value: "$(./Diskrete_Menge)"
+              datatype: xsd:float
+        - predicates: edifact-o:despatchQuantity
+          objects: 
+              value: "$(./Ausgelieferte_Menge)"
+              datatype: xsd:float
+        - predicates: edifact-o:deliveredQuantity
+          objects: 
+              value: "$(./Gelieferte_Menge)"
+              datatype: xsd:float
+        - predicates: p2p-o-doc-line:invoicedQuantity
+          objects: 
+              value: "$(./Berechnete_Menge)"
+              datatype: xsd:float
+        - predicates: p2p-o-doc-line:invoicedQuantityUnitOfMeasure
+          objects: 
+              - value: "$(./Berechnete_Einheit)"
+        - predicates: edifact-o:consumerUnitsInTradingUnitQuantity
+          objects: 
+              value: "$(./Verbrauchereinheiten)"
+              datatype: xsd:float
+        - predicates: edifact-o:returnQuantity
+          objects: 
+              value: "$(./Menge_Retour)"
+              datatype: xsd:float
+        - predicates: edifact-o:deliveredQuantity
+          objects: 
+              value: "$(./Menge_Liefer)"
+              datatype: xsd:float
+        - predicates: edifact-o:withoutCalculationQuantity
+          objects: 
+              value: "$(./Menge_ohne_Berechnung)"
+              datatype: xsd:float
+        - predicates: edifact-o:recivedAndAcceptedQuantity
+          objects: 
+              value: "$(./Menge_Erhalten_und_akzeptiert)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasRequiredDeliveryDate
+          objects: 
+              - value: "$(./DTM_2)"
+        - predicates: frapo:hasInvoiceDate
+          objects: 
+              - value: "$(./DTM_3)"
+        - predicates: frapo:PurchaseDate
+          objects: 
+              - value: "$(./DTM_4)"
+        - predicates: edifact-o:effectiveDate
+          objects: 
+              - value: "$(./DTM_7)"
+        - predicates: frapo:hasDispatchDate
+          objects: 
+              - value: "$(./DTM_11)"
+        - predicates: edifact-o:hasTermsDiscountDueDate
+          objects: 
+              - value: "$(./DTM_12)"
+        - predicates: edifact-o:hasTermsNetDueDate
+          objects: 
+              - value: "$(./DTM_13)"
+        - predicates: p2p-o-inv:actualDeliveryDate
+          objects: 
+              - value: "$(./DTM_35)"
+        - predicates: edifact-o:receiptGoodsDate
+          objects: 
+              - value: "$(./DTM_50)"
+        - predicates: edifact-o:exhangeRateDate
+          objects: 
+              - value: "$(./DTM_134)"
+        - predicates: edifact-o:documentDate
+          objects: 
+              - value: "$(./DTM_137)"
+        - predicates: edifact-o:referenceDate
+          objects: 
+              - value: "$(./DTM_171)"
+        - predicates: edifact-o:hasDueDate
+          objects:
+              value: "$(./DTM_140)"
+              datatype: xsd:string
+        - predicates: edifact-o:calculationPeriod
+          objects: 
+              - value: "$(./DTM_263)"
+        - predicates: edifact-o:taxPeriod
+          objects: 
+              - value: "$(./DTM_325)"
+        - predicates: edifact-o:loadPeriod
+          objects: 
+              - value: "$(./DTM_326)"
+        - predicates: edifact-o:discountTerminationDate
+          objects: 
+              - value: "$(./DTM_343)"
+        - predicates: edifact-o:hasNetpriceOfItem
+          objects: 
+              value: "$(./Nettokalkulation)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoiceprice
+          objects: 
+              value: "$(./Rechnungspreis)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasNetpricePerUnit
+          objects: 
+              value: "$(./Nettopreis_pro_Einheit)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGrosspriceOfItem
+          objects: 
+              value: "$(./Bruttokalkulation)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGrosspricePerUnit
+          objects: 
+              value: "$(./Bruttopreis_pro_Einheit)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPriceSource
+          objects: 
+              value: "$(./PreisQuelle)"
+        - predicates: edifact-o:hasPriceType
+          objects: 
+              value: "$(./PreisArt)"
+        - predicates: edifact-o:unitPriceBasis
+          objects: 
+              value: "$(./unitPriceBase)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalLineItemAmount
+          objects: 
+              value: "$(./MOA_79)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxableAmount
+          objects: 
+              value: "$(./MOA_125)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalDutyTaxFeeAmount
+          objects: 
+              value: "$(./MOA_176)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmount
+          objects: 
+              value: "$(./MOA_128)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasUnitPrice
+          objects: 
+              value: "$(./MOA_146)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasVATamount
+          objects: 
+              value: "$(./MOA_150)"
+              datatype: xsd:float 
+        - predicates: edifact-o:hasVATfirstValue
+          objects: 
+              value: "$(./MOA_1)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTaxAmount
+          objects: 
+              value: "$(./MOA_124)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAmount
+          objects: 
+              value: "$(./MOA_204)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowanceAmount
+          objects: 
+              value: "$(./MOA_23)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountDueOrPayable
+          objects: 
+              value: "$(./MOA_9)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasRemittedtAmount
+          objects: 
+              value: "$(./MOA_12)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasCashDiscount
+          objects: 
+              value: "$(./MOA_21)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargeAllowanceBasis
+          objects: 
+              value: "$(./MOA_25)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountAmount
+          objects: 
+              value: "$(./MOA_52)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDueDeductionAmount
+          objects: 
+              value: "$(./MOA_53)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasBasicTaxAmount
+          objects: 
+              value: "$(./MOA_56)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasFreightCharge
+          objects: 
+              value: "$(./MOA_64)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalGoodsPosition
+          objects: 
+              value: "$(./MOA_66)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasOriginalAmount
+          objects: 
+              value: "$(./MOA_98)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPaymentDiscountAmount
+          objects: 
+              value: "$(./MOA_109)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountMessage
+          objects: 
+              value: "$(./MOA_86)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAmountUnderPaymentReduction
+          objects: 
+              value: "$(./MOA_129)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPrepaidAmount
+          objects: 
+              value: "$(./MOA_113)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasTotalAdditionsAndDeductions
+          objects: 
+              value: "$(./MOA_131)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyAmount
+          objects: 
+              value: "$(./MOA_201)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasLineItemAmount
+          objects: 
+              value: "$(./MOA_203)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAmountUnderPriceAdjustment
+          objects: 
+              value: "$(./MOA_236)"
+              datatype: xsd:float
+        - predicates: edifact-o:proformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_AAB)"
+        - predicates: edifact-o:dateProformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_AAB_Date)"
+        - predicates: edifact-o:orderNumberDelivery
+          objects: 
+              - value: "$(./Referenz_AAJ)"
+        - predicates: edifact-o:dateOrderNumberDelivery
+          objects: 
+              - value: "$(./Referenz_AAJ_Date)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./Referenz_AAK)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./FTX_AAK)"
+        - predicates: edifact-o:dateDespatchAdviceNumber
+          objects: 
+              - value: "$(./Referenz_AAK_Date)"
+        - predicates: edifact-o:offerNumber
+          objects: 
+              - value: "$(./Referenz_AAG)"
+        - predicates: edifact-o:dateOfferNumber
+          objects: 
+              - value: "$(./Referenz_AAG_Date)"
+        - predicates: edifact-o:customsTariffNumber
+          objects: 
+              - value: "$(./Referenz_ABD)"
+        - predicates: edifact-o:dateCustomsTariffNumber
+          objects: 
+              - value: "$(./Referenz_ABD_Date)"
+        - predicates: edifact-o:originatorReference
+          objects: 
+              - value: "$(./Referenz_ABO)"
+        - predicates: edifact-o:dateOriginatorReference
+          objects: 
+              - value: "$(./Referenz_ABO_Date)"
+        - predicates: edifact-o:relatedDocumentNumber
+          objects: 
+              - value: "$(./Referenz_ACE)"
+        - predicates: edifact-o:accountsReceivableNumber
+          objects: 
+              - value: "$(./Referenz_AP)"
+        - predicates: edifact-o:dateAccountsReceivableNumber
+          objects: 
+              - value: "$(./Referenz_AP_Date)"
+        - predicates: edifact-o:beneficiaryReference
+          objects: 
+              - value: "$(./Referenz_AFO)"
+        - predicates: edifact-o:dateBeneficiaryReference
+          objects: 
+              - value: "$(./Referenz_AFO_Date)"
+        - predicates: edifact-o:numberOfBundleMessages
+          objects: 
+              - value: "$(./Referenz_ALL)"
+        - predicates: edifact-o:dateNumberOfBundleMessages
+          objects: 
+              - value: "$(./Referenz_ALL_Date)"
+        - predicates: edifact-o:receivingAdviceNumber
+          objects: 
+              - value: "$(./Referenz_ALO)"
+        - predicates: edifact-o:dateReceivingAdviceNumber
+          objects: 
+              - value: "$(./Referenz_ALO_Date)"
+        - predicates: edifact-o:additionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenz_API)"
+        - predicates: edifact-o:dateAdditionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenz_API_Date)"
+        - predicates: edifact-o:contractNumberBuyer
+          objects: 
+              - value: "$(./Referenz_BC)"
+        - predicates: edifact-o:dateContractNumberBuyer
+          objects: 
+              - value: "$(./Referenz_BC_Date)"
+        - predicates: edifact-o:numberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenz_CIN)"
+        - predicates: edifact-o:dateNumberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenz_CIN_Date)"
+        - predicates: edifact-o:creditNoteNumber
+          objects: 
+              - value: "$(./Referenz_CD)"
+        - predicates: edifact-o:dateCreditNoteNumber
+          objects: 
+              - value: "$(./Referenz_CD_Date)"
+        - predicates: edifact-o:referenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenz_COE)"
+        - predicates: edifact-o:dateReferenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenz_COE_Date)"
+        - predicates: edifact-o:referenceNumberCustomer
+          objects: 
+              - value: "$(./Referenz_CR)"
+        - predicates: edifact-o:dateReferenceNumberCustomer
+          objects: 
+              - value: "$(./Referenz_CR_Date)"
+        - predicates: edifact-o:contractNumber
+          objects: 
+              - value: "$(./Referenz_CT)"
+        - predicates: edifact-o:dateContractNumber
+          objects: 
+              - value: "$(./Referenz_CT_Date)"
+        - predicates: edifact-o:debitNoteNumber
+          objects: 
+              - value: "$(./Referenz_DL)"
+        - predicates: edifact-o:dateDebitNoteNumber
+          objects: 
+              - value: "$(./Referenz_DL_Date)"
+        - predicates: edifact-o:deliveryNoteNumber
+          objects: 
+              - value: "$(./Referenz_DQ)"
+        - predicates: edifact-o:dateDeliveryNoteNumber
+          objects: 
+              - value: "$(./Referenz_DQ_Date)"
+        - predicates: edifact-o:fiscalNumber
+          objects: 
+              - value: "$(./Referenz_FC)"
+        - predicates: edifact-o:dateFiscalNumber
+          objects: 
+              - value: "$(./Referenz_FC_Date)"
+        - predicates: edifact-o:fileLineIdentifier
+          objects: 
+              - value: "$(./Referenz_FI)"
+        - predicates: edifact-o:dateFileLineIdentifier
+          objects: 
+              - value: "$(./Referenz_FI_Date)"
+        - predicates: edifact-o:governmentReferenceNumber
+          objects: 
+              - value: "$(./Referenz_GN)"
+        - predicates: edifact-o:dateGovernmentReferenceNumber
+          objects: 
+              - value: "$(./Referenz_GN_Date)"
+        - predicates: edifact-o:harmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenz_HS)"
+        - predicates: edifact-o:dateHarmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenz_HS_Date)"
+        - predicates: edifact-o:internalVendorNumber
+          objects: 
+              - value: "$(./Referenz_IA)"
+        - predicates: edifact-o:dateInternalVendorNumber
+          objects: 
+              - value: "$(./Referenz_IA_Date)"
+        - predicates: edifact-o:importLicenseNumber
+          objects: 
+              - value: "$(./Referenz_IP)"
+        - predicates: edifact-o:dateImportLicenseNumber
+          objects: 
+              - value: "$(./Referenz_IP_Date)"
+        - predicates: edifact-o:internalCustomerNumber
+          objects: 
+              - value: "$(./Referenz_IT)"
+        - predicates: edifact-o:dateInternalCustomerNumber
+          objects: 
+              - value: "$(./Referenz_IT_Date)"
+        - predicates: p2p-o-inv:invoiceNumber
+          objects: 
+              - value: "$(./Referenz_IV)"
+        - predicates: edifact-o:dateInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_IV_Date)"
+        - predicates: edifact-o:lineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenz_LI)"
+        - predicates: edifact-o:dateLineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenz_LI_Date)"
+        - predicates: edifact-o:orderNumberBuyer
+          objects: 
+              - value: "$(./Referenz_ON)"
+        - predicates: edifact-o:dateOrderNumberBuyer
+          objects: 
+              - value: "$(./Referenz_ON_Date)"
+        - predicates: edifact-o:priceListNumber
+          objects: 
+              - value: "$(./Referenz_PL)"
+        - predicates: edifact-o:datePriceListNumber
+          objects: 
+              - value: "$(./Referenz_PL_Date)"
+        - predicates: edifact-o:paymentReference
+          objects: 
+              - value: "$(./Referenz_PQ)"
+        - predicates: edifact-o:datePaymentReference
+          objects: 
+              - value: "$(./Referenz_PQ_Date)"
+        - predicates: edifact-o:financialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenz_PY)"
+        - predicates: edifact-o:dateFinancialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenz_PY_Date)"
+        - predicates: edifact-o:exportReferenceNumber
+          objects: 
+              - value: "$(./Referenz_RF)"
+        - predicates: edifact-o:dateExportReferenceNumber
+          objects: 
+              - value: "$(./Referenz_RF_Date)"
+        - predicates: edifact-o:sellersReferenceNumber
+          objects: 
+              - value: "$(./Referenz_SS)"
+        - predicates: edifact-o:dateSellersReferenceNumber
+          objects: 
+              - value: "$(./Referenz_SS_Date)"
+        - predicates: edifact-o:specificationNumber
+          objects: 
+              - value: "$(./Referenz_SZ)"
+        - predicates: edifact-o:dateSpecificationNumber
+          objects: 
+              - value: "$(./Referenz_SZ_Date)"
+        - predicates: edifact-o:orderNumberSupplier
+          objects: 
+              - value: "$(./Referenz_VN)"
+        - predicates: edifact-o:dateOrderNumberSupplier
+          objects: 
+              - value: "$(./Referenz_VN_Date)"
+        - predicates: edifact-o:companyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenz_XA)"
+        - predicates: edifact-o:dateCompanyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenz_XA_Date)"
+        - predicates: edifact-o:itemNumberBuyer
+          objects: 
+              - value: "$(./Artikelnummer_des_Kaeufers)"
+        - predicates: edifact-o:internationalArticleNumber
+          objects: 
+              - value: "$(./International_Article_Number)"
+        - predicates: edifact-o:actionVariantNumber
+          objects: 
+              - value: "$(./Nummer_der_Aktionsvariante)"
+        - predicates: edifact-o:harmonisedSystem
+          objects: 
+              - value: "$(./Harmonisiertes_System)"
+        - predicates: edifact-o:nationalProductGroupCode
+          objects: 
+              - value: "$(./Nationaler_Produktgruppencode)"
+        - predicates: edifact-o:partNumberBuyer
+          objects: 
+              - value: "$(./Teilnummer_des_Kaeufers)"
+        - predicates: edifact-o:itemNumberManufacturer
+          objects: 
+              - value: "$(./Artikelnummer_des_Herstellers)"
+        - predicates: edifact-o:positionLineNumber
+          objects: 
+              - value: "$(./Positionszeilennummer)"
+        - predicates: edifact-o:itemNumberSupplier
+          objects: 
+              - value: "$(./Artikelnummer_des_Lieferanten)"
+        - predicates: edifact-o:universalProductCode
+          objects: 
+              - value: "$(./Universal_Prodcut_Code)" 
+        - predicates: edifact-o:measurements
+          objects: 
+              - value: "$(./Masangabe)"
+        - predicates: edifact-o:hasPhysicalDimension
+          objects: 
+              - value: "$(./Physische_Abmessung)"
+        - predicates: edifact-o:hasStockRestriction
+          objects: 
+              - value: "$(./Lagerbeschraenkung)"
+        - predicates: edifact-o:hasTransportRestriction
+          objects: 
+              - value: "$(./Beschraekung_Transportmittels)"
+        - predicates: edifact-o:hasNetWeightPerUnit
+          objects: 
+              - value: "$(./Nettogewicht_pro_Einheit)"
+        - predicates: edifact-o:hasNetWeight
+          objects: 
+              - value: "$(./Nettonettogewicht)"
+        - predicates: edifact-o:hasHeightDimension
+          objects: 
+              - value: "$(./Hoehenmass)"
+        - predicates: edifact-o:hasLengthMeasurements
+          objects: 
+              - value: "$(./Laengenmassangaben)"
+        - predicates: edifact-o:widthDimension
+          objects: 
+              - value: "$(./Breitenabmessung)"
+        - predicates: edifact-o:paymentCondition
+          objects: 
+              - value: "$(./ZahlungsbedingungsArt)"
+        - predicates: edifact-o:paymentReferenceDate
+          objects: 
+              - value: "$(./ZahlungsbezugsterminTage)"
+        - predicates: edifact-o:hasAllowanceReason
+          objects: 
+              - value: "$(./Abschlag)"
+        - predicates: edifact-o:hasChargeReason
+          objects: 
+              - value: "$(./Zuschlag)"
+        - predicates: edifact-o:noDiscountAllowance
+          objects: 
+              - value: "$(./Kein_Abschlag_Zuschlag)"
+        - predicates: edifact-o:hasAllowancePercentage
+          objects: 
+              value: "$(./MOA_23_Prozentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasAllowancePercentage
+          objects: 
+              value: "$(./AbschlagProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasChargePercentage
+          objects: 
+              value: "$(./MOA_204_Prozentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasDiscountPercentage
+          objects: 
+              value: "$(./AbzugProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasPenaltyPercentage
+          objects: 
+              value: "$(./StrafProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasInvoicePercentage
+          objects: 
+              value: "$(./RechnungsProzentsatz)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasVATrate
+          objects: 
+              value: "$(./TAX_VAT)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGSTrate
+          objects: 
+              value: "$(./TAX_GST)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasQuantityUnit
+          objects: 
+              - value: "$(./Mengen_Einheit)"
+        - predicates: edifact-o:hasPriceUnit
+          objects: 
+              - value: "$(./Preis_Maßeinheit)"
+        - predicates: edifact-o:hasUnit
+          objects: 
+              - value: "$(./D_MaEinheit)"
+        - predicates: edifact-o:hasDiscreteQuantityWithUnit
+          objects: 
+              - value: "$(./Diskrete_Menge_Einheit)"
+        - predicates: edifact-o:deliveredQuantityWithUnit
+          objects: 
+              - value: "$(./Gelieferte_Menge_Einheit)"
+        - predicates: edifact-o:deliveredQuantityWithUnit
+          objects: 
+              - value: "$(./Ausgelieferte_Menge_Einheit)"
+        - predicates: p2p-o-doc-line:invoicedQuantityUnitOfMeasure
+          objects: 
+              - value: "$(./Berechnete_Menge_Einheit)"
+        - predicates: edifact-o:consumerUnitsInTradingUnitQuantityWithUnit
+          objects: 
+              - value: "$(./Verbrauchereinheiten)"
+        - predicates: edifact-o:returnQuantityWithUnit
+          objects: 
+              - value: "$(./Retourmenge_Einheit)"
+        - predicates: edifact-o:deliveredQuantityWithUnit
+          objects: 
+              - value: "$(./Liefermenge_Einheit)"
+        - predicates: edifact-o:withoutCalculationQuantityWithUnit
+          objects: 
+              - value: "$(./Menge_ohne_Berechnung_Einheit)"
+        - predicates: edifact-o:recivedAndAcceptedQuantityWithUnit
+          objects: 
+              - value: "$(./Erhalten_und_akzeptiert_Einheit)"
+        - predicates: edifact-o:descriptionOfGoods
+          objects: 
+              - value: "$(./FTX_AAA)"
+        - predicates: edifact-o:generalInformation
+          objects: 
+              - value: "$(./FTX_AAI)"
+        - predicates: edifact-o:priceCondition
+          objects: 
+              - value: "$(./Preis_Bedingungen)"
+        - predicates: edifact-o:informationCustomsDeclaration
+          objects: 
+              - value: "$(./Informatioen_zur_Zollerklaerung)"
+        - predicates: edifact-o:changeInformation
+          objects: 
+              - value: "$(./FTX_CHG)"
+        - predicates: edifact-o:instructionForInvoicingParty
+          objects: 
+              - value: "$(./FTX_INV)"
+        - predicates: edifact-o:otherServiceInformation
+          objects: 
+              - value: "$(./FTX_OSI)"
+        - predicates: edifact-o:purchasingInformation
+          objects: 
+              - value: "$(./FTX_PUR)"
+        - predicates: edifact-o:reportingInformation
+          objects: 
+              - value: "$(./FTX_REG)"
+        - predicates: edifact-o:supplierNote
+          objects: 
+              - value: "$(./FTX_SUR)"
+        - predicates: edifact-o:bilateralAgreed
+          objects: 
+              - value: "$(./FTX_ZZZ)"
+    company:
+      sources: 
+          - test-source1
+          - test-source2
+          - test-source3
+      subjects:
+        - value: http://example.com/$(./PartyID)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects: 
+              value: edifact-o:FormalOrganization
+              type: iri 
+        - predicates: agentRole:performsAgentRole 
+          objects: 
+              value: http://example.com/$(./@organisation)
+              type: iri
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+            value: "$(./PartyID)"
+            datatype: xsd:integer
+    agentRole:
+      sources: 
+          - test-source1
+          - test-source2
+          - test-source3
+      subjects:
+        - value: http://example.com/$(./@organisation)
+      predicateobjects:
+        - predicates: rdf:type 
+          objects:
+              value: http://example.com/$(./@agentRole)
+              type: iri
+        - predicates: agentRole:isProvidedBy 
+          objects: 
+              value: http://example.com/$(./@details)
+              type: iri
+        - predicates: p2p-o-org:globalLocationNumber
+          objects: 
+              value: "$(./PartyID)"
+              datatype: xsd:integer
+        - predicates: p2p-o-org:formalName
+          objects: 
+              - value: $(./PartyName)
+        - predicates: vcard:hasStreetAddress
+          objects: 
+              - value: "$(./Street)"
+        - predicates: vcard:postalCode
+          objects: 
+              - value: "$(./PostalCode)"
+        - predicates: edifact-o:hasCity
+          objects: 
+              - value: "$(./City)"
+        - predicates: frapo:hasCountryCode
+          objects: 
+              - value: "$(./CountryCode)"
+        - predicates: edifact-o:hasCountry
+          objects: 
+              - value: "$(./CountryCode)"
+        - predicates: p2p-o-org:countrySubdivision
+          objects: 
+              - value: "$(./D_3229)"  
+        - predicates: edifact-o:hasAmountDueOrPayable
+          objects: 
+              - value: "$(./MOA_9)"
+        - predicates: edifact-o:hasRemittedtAmount
+          objects: 
+              value: "$(./MOA_12)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasCashDiscount
+          objects: 
+              - value: "$(./MOA_21)"
+        - predicates: edifact-o:hasChargeAllowanceBasis
+          objects: 
+              - value: "$(./MOA_25)"
+        - predicates: edifact-o:hasDiscountAmount
+          objects: 
+              - value: "$(./MOA_52)"
+        - predicates: edifact-o:hasTotalAmountUnderPaymentReduction
+          objects: 
+              - value: "$(./MOA_129)"
+        - predicates: edifact-o:hasPrepaidAmount
+          objects: 
+              - value: "$(./MOA_113)"
+        - predicates: edifact-o:hasAmountUnderPriceAdjustment
+          objects: 
+              - value: "$(./MOA_236)"
+        - predicates: edifact-o:proformaInvoiceNumber
+          objects: 
+              - value: "$(./Referenz_AAB)"
+        - predicates: edifact-o:orderNumberDelivery
+          objects: 
+              - value: "$(./Referenz_AAJ)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./Referenz_AAK)"
+        - predicates: edifact-o:despatchAdviceNumber
+          objects: 
+              - value: "$(./FTX_AAK)"
+        - predicates: edifact-o:offerNumber
+          objects: 
+              - value: "$(./Referenz_AAG)"
+        - predicates: edifact-o:customsTariffNumber
+          objects: 
+              - value: "$(./Referenz_ABD)"
+        - predicates: edifact-o:originatorReference
+          objects: 
+              - value: "$(./Referenz_ABO)"
+        - predicates: edifact-o:relatedDocumentNumber
+          objects: 
+              - value: "$(./Referenz_ACE)"
+        - predicates: edifact-o:accountsReceivableNumber
+          objects: 
+              - value: "$(./Referenz_AP)"
+        - predicates: edifact-o:beneficiaryReference
+          objects: 
+              - value: "$(./Referenz_AFO)"
+        - predicates: edifact-o:numberOfBundleMessages
+          objects: 
+              - value: "$(./Referenz_ALL)"
+        - predicates: edifact-o:receivingAdviceNumber
+          objects: 
+              - value: "$(./Referenz_ALO)"
+        - predicates: edifact-o:additionalPartnerIdentificationEANCode
+          objects: 
+              - value: "$(./Referenz_API)"
+        - predicates: edifact-o:contractNumberBuyer
+          objects: 
+              - value: "$(./Referenz_BC)"
+        - predicates: edifact-o:numberConsolidatedInvoiceEANCode
+          objects: 
+              - value: "$(./Referenz_CIN)"
+        - predicates: edifact-o:creditNoteNumber
+          objects: 
+              - value: "$(./Referenz_CD)"
+        - predicates: edifact-o:referenceNumberBusinessContactExtractEANCode
+          objects: 
+              - value: "$(./Referenz_COE)"
+        - predicates: edifact-o:referenceNumberCustomer
+          objects: 
+              - value: "$(./Referenz_CR)"
+        - predicates: edifact-o:contractNumber
+          objects: 
+              - value: "$(./Referenz_CT)"
+        - predicates: edifact-o:debitNoteNumber
+          objects: 
+              - value: "$(./Referenz_DL)"
+        - predicates: edifact-o:deliveryNoteNumber
+          objects: 
+              - value: "$(./Referenz_DQ)"
+        - predicates: edifact-o:fiscalNumber
+          objects: 
+              - value: "$(./Referenz_FC)"
+        - predicates: edifact-o:fileLineIdentifier
+          objects: 
+              - value: "$(./Referenz_FI)"
+        - predicates: edifact-o:governmentReferenceNumber
+          objects: 
+              - value: "$(./Referenz_GN)"
+        - predicates: edifact-o:harmonisedSystemNumber
+          objects: 
+              - value: "$(./Referenz_HS)"
+        - predicates: edifact-o:internalVendorNumber
+          objects: 
+              - value: "$(./Referenz_IA)"
+        - predicates: edifact-o:importLicenseNumber
+          objects: 
+              - value: "$(./Referenz_IP)"
+        - predicates: edifact-o:internalCustomerNumber
+          objects: 
+              - value: "$(./Referenz_IT)"
+        - predicates: p2p-o-inv:invoiceNumber
+          objects: 
+              - value: "$(./Referenz_IV)"
+        - predicates: edifact-o:lineItemReferenceNumber
+          objects: 
+              - value: "$(./Referenz_LI)"
+        - predicates: edifact-o:orderNumberBuyer
+          objects: 
+              - value: "$(./Referenz_ON)"
+        - predicates: edifact-o:priceListNumber
+          objects: 
+              - value: "$(./Referenz_PL)"
+        - predicates: edifact-o:paymentReference
+          objects: 
+              - value: "$(./Referenz_PQ)"
+        - predicates: edifact-o:financialAccountNumberPayee
+          objects: 
+              - value: "$(./Referenz_PY)"
+        - predicates: edifact-o:exportReferenceNumber
+          objects: 
+              - value: "$(./Referenz_RF)"
+        - predicates: edifact-o:sellersReferenceNumber
+          objects: 
+              - value: "$(./Referenz_SS)"
+        - predicates: edifact-o:specificationNumber
+          objects: 
+              - value: "$(./Referenz_SZ)"
+        - predicates: p2p-o-org:VATIdentifier
+          objects: 
+              - value: "$(./Umsatzsteuernummer)"
+        - predicates: edifact-o:orderNumberSupplier
+          objects: 
+              - value: "$(./Referenz_VN)"
+        - predicates: edifact-o:companyOrPlaceRegistristrationNumber
+          objects: 
+              - value: "$(./Referenz_XA)"
+        - predicates: edifact-o:paymentCondition
+          objects: 
+              - value: "$(./ZahlungsbedingungsArt)"
+        - predicates: edifact-o:paymentReferenceDate
+          objects: 
+              - value: "$(./ZahlungsbezugsterminTage)"
+        - predicates: edifact-o:hasVATrate
+          objects: 
+              value: "$(./TAX_VAT)"
+              datatype: xsd:float
+        - predicates: edifact-o:hasGSTrate
+          objects: 
+              value: "$(./TAX_GST)"
+              datatype: xsd:float
+        - predicates: edifact-o:contactPersonAccounting
+          objects: 
+              - value: "$(./Ansprechpartner_Buchhaltung)"
+        - predicates: edifact-o:contactPersonCreditorAccounting
+          objects: 
+              - value: "$(./Ansprechpartner_Kreditorenbuchhaltung)"
+        - predicates: edifact-o:contactPersonReceivableAccounting
+          objects: 
+              - value: "$(./Ansprechpartner_Debitorenbuchaltung)"
+        - predicates: edifact-o:contactPersonIncomingGoods
+          objects: 
+              - value: "$(./Ansprechpartner_Wareneingang)"
+        - predicates: edifact-o:contactPersonInformation
+          objects: 
+              - value: "$(./Ansprechpartner_Information)"
+        - predicates: edifact-o:contactPersonPurchasingDepartment
+          objects: 
+              - value: "$(./Ansprechpartner_Einkaufabteilung)"
+        - predicates: edifact-o:contactPersonSalesDepartment
+          objects: 
+              - value: "$(./Ansprechpartner_Verkaufsabteilung)"
+        - predicates: edifact-o:contactPersonEmailAddress
+          objects: 
+              - value: "$(./Ansprechpartner_EmailAdresse)"
+        - predicates: edifact-o:contactPersonFaxNumber
+          objects: 
+              - value: "$(./Ansprechpartner_TelefaxNummer)"
+        - predicates: edifact-o:contactPersonTelefonNumber
+          objects: 
+              - value: "$(./Ansprechpartner_TelefonNummer)"
+        - predicates: edifact-o:contactPersonTelexNumber
+          objects: 
+              - value: "$(./Ansprechpartner_TelexNummer)"
+        - predicates: edifact-o:contactPersonX400Number
+          objects: 
+              - value: "$(./Ansprechpartner_X400Nummer)"
+        - predicates: edifact-o:contactDepartmentPerson
+          objects: 
+              - value: "$(./D_3412)"
