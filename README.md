@@ -19,7 +19,7 @@ The EIDFACT-VAL tool contains the following steps:
 All these steps are combined into one Python program called [EDIFACT-Val](https://github.com/DE-TUM/EDIFACT-VAL/blob/62012cbf7096ae49aa0e709bdfe87074a5f21836/src2/edifact-val.py).
 
 An overview of the EDIFACT Val tool can be seen here: 
-![alt text](https://github.com/DE-TUM/EDIFACT-VAL/blob/62012cbf7096ae49aa0e709bdfe87074a5f21836/docs/overview.pdf)
+[Overview of the EDIFACT Val tool (PDF)](https://github.com/DE-TUM/EDIFACT-VAL/blob/62012cbf7096ae49aa0e709bdfe87074a5f21836/docs/overview.pdf)
 
 ## Preparations
 
