@@ -1,0 +1,312 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://mapping.example.com/> .
+@prefix cmns-id: <https://www.omg.org/spec/Commons/Identifiers/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/elements/1.1#> .
+@prefix eancom: <http://webprotege.stanford.edu/EancomD96A/> .
+@prefix eli: <http://publications.europa.eu/resource/dataset/eli/> .
+@prefix fibo-fbc-fct-fse: <https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/> .
+@prefix fibo-fbc-pas-caa: <https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/> .
+@prefix fibo-fnd-qt-qtu: <https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/> .
+@prefix fibo-fnd-utl-alx: <https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix gndo: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix gs1: <https://ref.gs1.org/gs1/vc/declaration-ontology/1.1.0/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p2p-o: <https://purl.org/p2p-o#> .
+@prefix p2p-o-doc: <https://purl.org/p2p-o/document#> .
+@prefix p2p-o-doc-line: <https://purl.org/p2p-o/documentline#> .
+@prefix p2p-o-inv: <https://purl.org/p2p-o/invoice#> .
+@prefix p2p-o-item: <https://purl.org/p2p-o/item#> .
+@prefix p2p-o-org: <https://purl.org/p2p-o/organization#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sbeo: <https://w3id.org/sbeo#> .
+@prefix schema: <http://schema.org/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+<http://example.org/myShapesGraph> owl:imports <http://datashapes.org/dash> . 
+
+
+:NameUndAnschriftUnternehmen
+    a sh:NodeShape ;
+    sh:targetClass org:FormalOrganization;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path p2p-o-org:formalName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1; 
+        sh:severity sh:Violation ;
+    ]; 
+    sh:property [
+        sh:path p2p-o-org:globalLocationNumber ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1;
+        sh:minLength 13;
+        sh:maxLength 13 ;
+        sh:severity sh:Violation ;
+   ]; 
+    sh:property [
+        sh:path eancom:hasCity ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+   ]; 
+    sh:property [
+        sh:path frapo:hasCountryCode ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1;
+        sh:minLength 2;
+        sh:maxLength 2 ;
+        sh:severity sh:Violation ;
+   ]; 
+    sh:property [
+        sh:path vcard:hasStreetAddress ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+   ]; 
+    sh:property [
+        sh:path vcard:postalCode ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+   ]
+.
+
+:ExistenzBeteiligtePartner
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path p2p-o-inv:hasBuyer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ];
+    sh:property [
+        sh:path p2p-o-inv:hasSupplier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ];
+    sh:property [
+        sh:path eancom:hasInvoicee ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ];
+    sh:property [
+        sh:path eancom:hasDeliveryParty ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ]
+.
+
+:UmsatzsteuernummerKaeufer
+    a sh:NodeShape ;
+    sh:targetClass org:FormalOrganization ;
+    sh:severity sh:Violation ;
+    sh:or (
+        [ 
+            sh:not 
+            [
+		        a sh:PropertyShape ;
+		        sh:path eancom:hasFunctionInInvoice ;
+		        sh:hasValue "Kaeufer" ;
+                sh:severity sh:Violation ;
+            ] 
+        ]
+        [
+            sh:path p2p-o-org:VATIdentifier ;
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:maxLength 14 ;
+            sh:severity sh:Violation ;
+        ]
+    ) 
+.
+
+:UmsatzsteuernummerRechnungsempfaenger
+    a sh:NodeShape ;
+    sh:targetClass org:FormalOrganization ;
+    sh:severity sh:Violation ;
+    sh:or (
+        [ 
+            sh:not 
+            [
+		        a sh:PropertyShape ;
+		        sh:path eancom:hasFunctionInInvoice ;
+		        sh:hasValue "Rechnungsempfaenger" ;
+                sh:severity sh:Violation ;
+            ] 
+        ]
+        [
+            sh:path p2p-o-org:VATIdentifier ;
+            sh:minCount 1;
+            sh:maxCount 1;
+            sh:maxLength 14 ;
+            sh:severity sh:Violation ;
+        ]
+    ) 
+.
+
+:Austellungsdatum
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path eancom:documentDate ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ]
+. 
+
+:Rechnungsnummer
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:severity sh:Violation ; 
+    sh:property [
+        sh:path eancom:documentNumber ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:maxLength 13 ;
+        sh:severity sh:Violation ;
+   ]
+.
+
+:GelieferterUmfang
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-item:item;
+    sh:severity sh:Warning ;
+    sh:property [
+        sh:path eancom:deliveredQuantity;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+   ];
+    sh:property [
+        sh:path eancom:deliveredQuantityWithUnit;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+   ];
+    sh:property [
+        sh:path p2p-o-item:itemName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Warning ;
+   ]
+.
+
+:LieferZeitpunkt
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:severity sh:Info ;
+    sh:property [
+        sh:path p2p-o-inv:actualDeliveryDate ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Info ;
+   ]
+.
+
+:EntgeltAuschluesselung
+    a sh:NodeShape;
+    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:severity sh:Violation ;
+    sh:property [
+        sh:path eancom:hasTaxableAmount ;
+        sh:datatype xsd:float ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+   ];
+    sh:property [
+        sh:path eancom:hasTotalLineItemAmount ;
+        sh:datatype xsd:float ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+   ];
+   sh:or(
+        [
+            sh:path eancom:hasTotalAmount ;
+            sh:datatype xsd:float ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ]
+        [
+            sh:path eancom:hasInvoiceAmount ;
+            sh:datatype xsd:float ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ]
+        [
+            sh:path eancom:hasTotalAmountMessage ;
+            sh:datatype xsd:float ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ]
+   );
+    sh:property [
+        sh:path p2p-o-inv:actualDeliveryDate ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+   ]
+. 
+
+:Produktidentifikation
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-item:item;
+    sh:severity sh:Warning ;
+    sh:property [
+        sh:path eancom:hasProductIdentification ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+   ]
+.
+
+:Prozesszugehoerigkeit 
+    a sh:NodeShape ;
+    sh:targetClass p2p-o-doc:E-Invoice;
+    sh:severity sh:Info ;
+    sh:property [
+        sh:path eancom:belongsToProcess ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:hasValue "BricksAndTools" ;
+        sh:severity sh:Info ;
+    ]
+.
